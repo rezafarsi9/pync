@@ -1,0 +1,2739 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e.l.f. Cosmetics - بازطراحی مدرن</title>
+    <link rel="shortcut icon" href="/assets/img/eye1.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --font-main: 'Vazirmatn', sans-serif;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9f9f9;
+            --bg-tertiary: #f0f0f0;
+            --text-primary: #000000;
+            --text-secondary: #555555;
+            --text-muted: #767676;
+            --accent-color: #e6007e; /*#f592a6*/
+            --accent-text-color: #ffffff;
+            --accent-hover-color: #c4006b;
+            --border-color: #e0e0e0;
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0,0,0,0.08);
+            --nav-bg: #ffffff;
+            --nav-text: var(--text-primary);
+            --nav-hover-text: var(--accent-color);
+            --nav-category-border: var(--border-color);
+            --nav-shadow-color: rgba(0,0,0,0.07);
+            --button-primary-bg: var(--accent-color);
+            --button-primary-text: var(--accent-text-color);
+            --button-primary-hover-bg: var(--accent-hover-color);
+            --button-secondary-bg: #000000;
+            --button-secondary-text: #ffffff;
+            --button-secondary-hover-bg: #333333;
+            --input-bg: #ffffff;
+            --input-border: #cccccc;
+            --input-focus-ring: var(--accent-color);
+            --scrollbar-track-bg: #f1f1f1;
+            --scrollbar-thumb-bg: var(--accent-color);
+            --scrollbar-thumb-hover-bg: var(--accent-hover-color);
+            --hero-overlay-bg: rgba(0, 0, 0, 0.05); 
+            --hero-card-bg: var(--card-bg);
+            --hero-card-text: var(--text-primary);
+            --hero-dynamic-bg-opacity: 0.3;
+            --hero-dynamic-bg-blur: 8px;
+            --hero-dynamic-bg-brightness: 0.7;
+            --footer-bg: #000000;
+            --footer-text: #cccccc;
+            --footer-heading-text: #ffffff;
+            --footer-link-hover: var(--accent-color);
+            --footer-border-color: #333333;
+            --faq-item-bg: var(--card-bg);
+            --faq-answer-bg: var(--bg-secondary);
+            --use-card-bg: var(--card-bg);
+            --use-card-hover-bg: var(--bg-secondary);
+            --video-slider-card-bg: var(--card-bg);
+            --video-slider-product-link-bg: var(--bg-secondary);
+            --video-slider-product-link-hover-bg: var(--bg-tertiary);
+            --cart-drawer-bg: var(--bg-primary);
+            --cart-item-border: var(--border-color);
+            --wishlist-active-color: var(--accent-color);
+            --wishlist-drawer-bg: var(--bg-primary); 
+            --wishlist-item-border: var(--border-color);
+            --bundle-card-bg-1: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%); /* Pinkish */
+            --bundle-card-bg-2: linear-gradient(135deg, #c084fc 0%, #a855f7 100%); /* Purplish */
+            --bundle-card-bg-3: linear-gradient(135deg, #fdba74 0%, #f97316 100%); /* Orangish */
+            --bundle-card-text-color: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #222222;
+            --bg-tertiary: #2c2c2c;
+            --text-primary: #f0f0f0;
+            --text-secondary: #bbbbbb;
+            --text-muted: #888888;
+            --border-color: #444444;
+            --card-bg: #252525;
+            --card-shadow: rgba(255,255,255,0.05);
+            --nav-bg: #1f1f1f;
+            --nav-category-border: #3a3a3a;
+            --nav-shadow-color: rgba(255,255,255,0.03);
+            --button-secondary-bg: #f0f0f0;
+            --button-secondary-text: #1a1a1a;
+            --button-secondary-hover-bg: #dddddd;
+            --input-bg: #2c2c2c;
+            --input-border: #555555;
+            --input-focus-ring: var(--accent-color);
+            --scrollbar-track-bg: #2c2c2c;
+            --hero-overlay-bg: rgba(0, 0, 0, 0.3);
+            --hero-card-bg: #1f1f1f; 
+            --hero-card-text: var(--text-primary);
+            --hero-dynamic-bg-opacity: 0.25;
+            --hero-dynamic-bg-blur: 10px;
+            --hero-dynamic-bg-brightness: 0.5;
+            --footer-bg: #080808;
+            --footer-text: #aaaaaa;
+            --footer-heading-text: #f0f0f0;
+            --footer-border-color: #2c2c2c;
+            --faq-item-bg: var(--card-bg);
+            --faq-answer-bg: var(--bg-primary);
+            --use-card-bg: var(--card-bg);
+            --use-card-hover-bg: var(--bg-tertiary);
+            --video-slider-card-bg: var(--card-bg);
+            --video-slider-product-link-bg: var(--bg-primary);
+            --video-slider-product-link-hover-bg: var(--bg-secondary);
+            --cart-drawer-bg: #1f1f1f; 
+            --cart-item-border: #3a3a3a;
+            --wishlist-drawer-bg: #1f1f1f;
+            --wishlist-item-border: #3a3a3a;
+            --bundle-card-text-color: #ffffff; /* Text color remains white for dark theme bundles */
+        }
+
+        body {
+            font-family: var(--font-main);
+            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hero Carousel Styles */
+        .hero-carousel-wrapper { position: relative; background-color: var(--bg-secondary); padding: 3rem 0; overflow: hidden; }
+        .hero-carousel-dynamic-bg-container { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+        .hero-carousel-bg-layer { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 0.9s ease-in-out; filter: blur(var(--hero-dynamic-bg-blur)) brightness(var(--hero-dynamic-bg-brightness)); }
+        .hero-carousel-bg-layer.visible { opacity: var(--hero-dynamic-bg-opacity);
+        }
+        .hero-carousel-header { position: relative; z-index: 5; text-align: center; margin-bottom: 2.5rem; }
+        .hero-carousel-main-title { font-size: 2rem; font-weight: 300; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .hero-carousel-subtitle { font-size: 0.85rem; color: var(--text-muted); }
+        .hero-carousel-nav { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-top: 1rem; }
+        .hero-carousel-nav button { background-color: transparent; color: var(--text-primary); border: none; padding: 0.5rem; cursor: pointer; font-size: 1.25rem; transition: color 0.3s ease; }
+        .hero-carousel-nav button:hover { color: var(--accent-color); }
+        .hero-carousel { position: relative; width: 100%; height: 60vh; display: flex; justify-content: center; align-items: center; perspective: 1500px; z-index: 5; }
+        .hero-carousel-slide { position: absolute; width: 55%; height: 100%; transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s ease, z-index 0s 0.3s; background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .hero-carousel-slide .slide-image-overlay { position: absolute; inset: 0; background-color: rgba(var(--hero-overlay-bg), 0.1); z-index: 1; transition: background-color 0.3s ease; }
+        .hero-carousel-slide.active .slide-image-overlay { background-color: rgba(0,0,0,0.05); [data-theme="dark"] & { background-color: rgba(0,0,0,0.2); } }
+        .hero-carousel-slide .slide-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .hero-carousel-slide.active .slide-image { transform: scale(1.05); }
+        .hero-carousel-slide .slide-content-box {
+            position: absolute; bottom: 8%; left: 8%; width: auto; max-width: 350px; color: var(--hero-card-text); padding: 1.25rem 1.75rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 2; text-align: right; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+            background: rgba(var(--hero-card-bg), 0.04);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(7.9px);
+            -webkit-backdrop-filter: blur(7.9px);
+        }
+        .hero-carousel-slide.active .slide-content-box { opacity: 1; transform: translateY(0); }
+        .hero-carousel-slide .slide-content-box .category-tag { font-size: 0.7rem; text-transform: uppercase; font-weight: 600; color: var(--accent-color); margin-bottom: 0.5rem; display: inline-block; }
+        .hero-carousel-slide .slide-content-box h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--hero-card-text); line-height: 1.3; }
+        .hero-carousel-slide .slide-content-box p { font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-secondary); line-height: 1.5; }
+        .hero-carousel-slide .slide-content-box .cta-button { display: inline-block; background-color: var(--accent-color); color: var(--accent-text-color); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: background-color 0.3s ease; }
+        .hero-carousel-slide .slide-content-box .cta-button:hover { background-color: var(--accent-hover-color); }
+        .hero-carousel-slide.active { transform: translateX(0) scale(1); opacity: 1; z-index: 2; }
+        .hero-carousel-slide.prev, .hero-carousel-slide.next { transform: scale(0.8); opacity: 0.5; z-index: 1; filter: blur(2px); }
+        .hero-carousel-slide.prev { transform: translateX(calc(50% + 2rem)) scale(0.8); }
+        .hero-carousel-slide.next { transform: translateX(calc(-50% - 2rem)) scale(0.8); }
+        .hero-carousel-slide.far-prev { transform: translateX(calc(100% + 4rem)) scale(0.7); opacity: 0; z-index: 0; }
+        .hero-carousel-slide.far-next { transform: translateX(calc(-100% - 4rem)) scale(0.7); opacity: 0; z-index: 0; }
+
+        /* General Styles */
+        .product-card:hover .add-to-cart-hover { opacity: 1; transform: translateY(0); } /* Renamed for clarity */
+        .add-to-cart-hover { opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease; }
+        .nav-shadow { box-shadow: 0 1px 3px var(--nav-shadow-color); }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease-in-out; background-color: var(--nav-bg); }
+        .mobile-menu.open { transform: translateX(0); }
+        .search-bar-animation { transition: all 0.3s ease-in-out; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-bg); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover-bg); }
+        .category-nav a { padding: 0.75rem 1rem; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; color: var(--nav-text); letter-spacing: 0.5px; }
+        .category-nav a:hover { color: var(--nav-hover-text); border-bottom: 2px solid var(--nav-hover-text); }
+        .gradient-text-elf { color: var(--accent-color); }
+
+        .horizontal-slider-wrapper { position: relative; }
+        .horizontal-product-slider { display: flex; overflow-x: auto; padding-bottom: 1rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .horizontal-product-slider::-webkit-scrollbar { height: 8px; }
+        .horizontal-product-slider::-webkit-scrollbar-thumb { background-color: var(--scrollbar-thumb-bg); border-radius: 10px; }
+        .horizontal-product-slider > a > div[class*="product-card-style"], 
+        .horizontal-product-slider > a > .video-testimonial-slider-item { 
+            flex: 0 0 auto;
+            width: 280px; 
+            margin-left: 1rem; 
+            scroll-snap-align: start; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .horizontal-product-slider > a:first-child > div[class*="product-card-style"], 
+        .horizontal-product-slider > a:first-child > .video-testimonial-slider-item { 
+            margin-right: 0; 
+        }
+        .horizontal-product-slider { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg); }
+        .horizontal-product-slider:not(:hover)::-webkit-scrollbar-thumb { background-color: transparent; }
+
+        .slider-nav-button { display: none; position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(255, 255, 255, 0.8); color: var(--text-primary); border: 1px solid var(--border-color); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: background-color 0.3s ease, color 0.3s ease; }
+        .horizontal-slider-wrapper.video-slider-nav .slider-nav-button { top: 40%; }
+        .slider-nav-button:hover { background-color: var(--accent-color); color: var(--accent-text-color); border-color: var(--accent-color); }
+        .slider-nav-button.prev { left: -20px; }
+        .slider-nav-button.next { right: -20px; }
+        [data-theme="dark"] .slider-nav-button { background-color: rgba(40, 40, 40, 0.8); }
+        [data-theme="dark"] .slider-nav-button:hover { background-color: var(--accent-color); }
+        @media (min-width: 768px) { .slider-nav-button { display: flex; align-items: center; justify-content: center; } }
+
+        /* Product Card Styles */
+        .product-card-link { display: block; text-decoration: none; } 
+
+        .product-card-style-1 { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; display:flex; flex-direction:column; }
+        .product-card-style-1 img { height: 280px; object-fit: cover; width: 100%; }
+        .product-card-style-1 .p-info { padding: 1rem; text-align: center; flex-grow: 1; display:flex; flex-direction:column; justify-content:space-between; }
+        .product-card-style-1 .p-name { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem; min-height: 40px; }
+        .product-card-style-1 .p-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; min-height: 30px; }
+        .product-card-style-1 .p-price { font-size: 1.1rem; font-weight: bold; color: var(--accent-color); margin-bottom: 0.75rem; }
+        .product-card-style-1 .add-to-cart-btn-style1 { background-color: var(--button-secondary-bg); color: var(--button-secondary-text); padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; transition: background-color 0.3s ease; border:none; width:100%; }
+        .product-card-style-1 .add-to-cart-btn-style1:hover { background-color: var(--button-secondary-hover-bg); }
+        .product-card-link:hover .product-card-style-1 { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        .product-card-style-2 { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px var(--card-shadow); }
+        .product-card-style-2 img { height: 320px; object-fit: cover; width: 100%; display: block; transition: transform 0.4s ease; }
+        .product-card-link:hover .product-card-style-2 img { transform: scale(1.05); }
+        .product-card-style-2 .p-info-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 60%, transparent 100%); color: white; padding: 1.5rem 1rem 1rem; text-align: right; display:flex; justify-content:space-between; align-items:center; }
+        .product-card-style-2 .p-name { font-size: 1.1rem; font-weight: bold; margin-bottom: 0.3rem; flex-grow:1; }
+        .product-card-style-2 .p-price { font-size: 1rem; font-weight: 500; color: var(--accent-color); margin-bottom:0.3rem; }
+        .product-card-style-2 .add-to-cart-btn-style2 { background-color: var(--accent-color); color: var(--accent-text-color); border:none; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:1rem; transition: background-color 0.3s ease; }
+        .product-card-style-2 .add-to-cart-btn-style2:hover { background-color: var(--accent-hover-color); }
+
+
+        .product-card-style-3 { background-color: var(--bg-secondary); border-radius: 6px; padding: 0.75rem; border: 1px solid var(--border-color); display:flex; flex-direction:column; }
+        .product-card-style-3 .img-container { overflow: hidden; border-radius: 4px; margin-bottom: 0.75rem; }
+        .product-card-style-3 img { height: 260px; object-fit: cover; width: 100%; display: block; transition: filter 0.3s ease; }
+        .product-card-link:hover .product-card-style-3 img { filter: brightness(1.1); }
+        .product-card-style-3 .p-info { text-align: center; flex-grow:1; display:flex; flex-direction:column; justify-content:space-between; }
+        .product-card-style-3 .p-name { font-size: 1rem; font-weight: 500; color: var(--text-primary); margin-bottom: 0.3rem; min-height: 42px; }
+        .product-card-style-3 .p-category { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+        .product-card-style-3 .p-price { font-size: 1.05rem; font-weight: bold; color: var(--text-primary); margin-bottom: 0.75rem;}
+        .product-card-style-3 .add-to-cart-btn-style3 { margin-top: 0.75rem; width: 100%; background-color: var(--button-secondary-bg); color: var(--button-secondary-text); padding: 0.6rem 1rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: background-color 0.3s ease; border:none; }
+        .product-card-style-3 .add-to-cart-btn-style3:hover { background-color: var(--button-secondary-hover-bg); }
+
+        .product-card-style-4 { background-color: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 12px var(--card-shadow); display: flex; flex-direction: column; }
+        .product-card-style-4 .img-wrapper { position: relative; overflow: hidden; }
+        .product-card-style-4 img { height: 280px; object-fit: cover; width: 100%; transition: transform 0.3s ease; }
+        .product-card-link:hover .product-card-style-4 img { transform: scale(1.03); }
+        .product-card-style-4 .wishlist-btn { position: absolute; top: 0.75rem; right: 0.75rem; background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(2px); color: var(--text-primary); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: background-color 0.3s ease, color 0.3s ease; border: 1px solid var(--border-color); cursor:pointer; }
+        .product-card-style-4 .wishlist-btn:hover, .product-card-style-4 .wishlist-btn.active { /*background-color: var(--accent-color);*/ color: var(--accent-text-color); }
+        [data-theme="dark"] .product-card-style-4 .wishlist-btn { background-color: rgba(0, 0, 0, 0.5); border-color: var(--border-color); }
+        .product-card-style-4 .p-info { padding: 1rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card-style-4 .p-name { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem; min-height: 42px; }
+        .product-card-style-4 .p-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; min-height: 32px; }
+        .product-card-style-4 .p-price { font-size: 1.15rem; font-weight: bold; color: var(--accent-color); margin-bottom: 0.75rem; }
+        .product-card-style-4 .add-to-cart-btn { width: 100%; background-color: var(--button-secondary-bg); color: var(--button-secondary-text); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; transition: background-color 0.3s ease; border: none; }
+        .product-card-style-4 .add-to-cart-btn:hover { background-color: var(--button-secondary-hover-bg); }
+
+        /* Card Style 5: Similar to Style 4, for the new "You Might Like" slider */
+        .product-card-style-5 {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card-style-5 .img-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        .product-card-style-5 img {
+            height: 260px; /* Slightly smaller image height */
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        .product-card-link:hover .product-card-style-5 img { /* Ensure hover on link triggers zoom */
+            transform: scale(1.03);
+        }
+        .product-card-style-5 .wishlist-btn { /* Reusing style from card-4 */
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem; 
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+            color: var(--text-primary);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 1px solid var(--border-color);
+            cursor:pointer;
+        }
+        .product-card-style-5 .wishlist-btn:hover, .product-card-style-5 .wishlist-btn.active {
+            background-color: var(--accent-color);
+            color: var(--accent-text-color);
+        }
+        [data-theme="dark"] .product-card-style-5 .wishlist-btn {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-color: var(--border-color);
+        }
+        .product-card-style-5 .p-info {
+            padding: 1rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card-style-5 .p-name {
+            font-size: 0.9rem; /* Slightly smaller name */
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            min-height: 38px; /* Adjusted min-height */
+        }
+        .product-card-style-5 .p-price {
+            font-size: 1rem; /* Slightly smaller price */
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.75rem;
+        }
+        .product-card-style-5 .add-to-cart-btn { /* Reusing style from card-4 */
+            width: 100%;
+            background-color: var(--button-secondary-bg);
+            color: var(--button-secondary-text);
+            padding: 0.6rem 0.8rem; /* Slightly smaller button */
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+        .product-card-style-5 .add-to-cart-btn:hover {
+            background-color: var(--button-secondary-hover-bg);
+        }
+
+
+        /* FAQ Section Styles */
+        .faq-section { background-color: var(--bg-primary); color: var(--text-primary); }
+        .faq-item { background-color: var(--faq-item-bg); border-bottom: 1px solid var(--border-color); }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.05rem; }
+        .faq-question:hover { color: var(--accent-color); }
+        .faq-icon { transition: transform 0.3s ease; font-size: 1rem; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; background-color: var(--faq-answer-bg); padding: 0 1.5rem; line-height: 1.6; font-size: 0.95rem; color: var(--text-secondary); }
+        .faq-answer p { padding-bottom: 1.25rem; }
+        .faq-item.active .faq-answer { padding-top: 1.25rem; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+        /* Shop by Use Section */
+        .use-category-card { background-color: var(--use-card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; text-align: center; transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 160px; }
+        .use-category-card:hover { background-color: var(--use-card-hover-bg); transform: translateY(-5px); box-shadow: 0 8px 16px var(--card-shadow); }
+        .use-category-card svg { width: 48px; height: 48px; margin-bottom: 1rem; fill: var(--text-primary); transition: fill 0.3s ease; }
+        .use-category-card:hover svg { fill: var(--accent-color); }
+        .use-category-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); transition: color 0.3s ease; }
+        .use-category-card:hover h4 { color: var(--accent-color); }
+
+        /* Cart Drawer Styles */
+        .cart-drawer-overlay, .wishlist-drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 55; 
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+        }
+        .cart-drawer-overlay.active, .wishlist-drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+        }
+        .cart-drawer, .wishlist-drawer {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            max-width: 400px; 
+            height: 100%;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+            z-index: 60; 
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-drawer { /* Slides from left */
+            left: 0; 
+            background-color: var(--cart-drawer-bg);
+            transform: translateX(-100%); 
+        }
+        .wishlist-drawer { /* Slides from right (opposite of mobile menu) */
+            right: 0;
+            background-color: var(--wishlist-drawer-bg);
+            transform: translateX(100%);
+        }
+        .cart-drawer.active, .wishlist-drawer.active {
+            transform: translateX(0);
+        }
+
+        .cart-header, .wishlist-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--cart-item-border); /* Use cart-item-border for consistency or define wishlist-item-border */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-header h3, .wishlist-header h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .cart-close-btn, .wishlist-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .cart-close-btn:hover, .wishlist-close-btn:hover {
+            color: var(--accent-color);
+        }
+        .cart-body, .wishlist-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem 1.5rem;
+        }
+        .cart-item, .wishlist-item { /* Shared styles for items */
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--cart-item-border); /* Use cart-item-border for consistency */
+        }
+        .cart-item:last-child, .wishlist-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item img, .wishlist-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-left: 1rem; /* For RTL */
+        }
+        .cart-item-details, .wishlist-item-details {
+            flex-grow: 1;
+        }
+        .cart-item-name, .wishlist-item-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        .cart-item-price, .wishlist-item-price {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cart-item-quantity button {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .cart-item-quantity button:hover {
+            background-color: var(--accent-color);
+            color: var(--accent-text-color);
+        }
+        .cart-item-quantity span {
+            font-size: 0.9rem;
+            min-width: 20px;
+            text-align: center;
+        }
+        .cart-item-remove-btn, .wishlist-item-remove-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 0.5rem; /* For RTL */
+        }
+        .cart-item-remove-btn:hover, .wishlist-item-remove-btn:hover {
+            color: red;
+        }
+        .wishlist-item-add-to-cart-btn { /* Specific for wishlist item */
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 0.5rem; /* Spacing from remove button */
+        }
+        .wishlist-item-add-to-cart-btn:hover {
+            color: var(--accent-hover-color);
+        }
+
+        .cart-empty-message, .wishlist-empty-message {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-muted);
+        }
+        .cart-footer, .wishlist-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--cart-item-border); /* Use cart-item-border for consistency */
+            background-color: var(--cart-drawer-bg); /* Ensure footer bg matches */
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .checkout-btn, .view-all-wishlist-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--button-primary-bg);
+            color: var(--button-primary-text);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .checkout-btn:hover, .view-all-wishlist-btn:hover {
+            background-color: var(--button-primary-hover-bg);
+        }
+        .continue-shopping-btn {
+            display: block;
+            width: 100%;
+            background-color: transparent;
+            color: var(--accent-color);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 0.75rem;
+            border: 1px solid var(--accent-color);
+        }
+        .continue-shopping-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--accent-text-color);
+        }
+
+        /* Bundle Card Styles */
+        .bundle-card {
+            border-radius: 16px;
+            padding: 1.5rem;
+            color: var(--bundle-card-text-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 420px; /* Ensure consistent height */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        .bundle-card:hover {
+            transform: translateY(-5px);
+        }
+        .bundle-card-bg1 { background: var(--bundle-card-bg-1); }
+        .bundle-card-bg2 { background: var(--bundle-card-bg-2); }
+        .bundle-card-bg3 { background: var(--bundle-card-bg-3); }
+
+        .bundle-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .bundle-subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        .bundle-products {
+            margin-bottom: 1.5rem;
+            max-height: 150px; /* Limit height for product list */
+            overflow-y: auto; /* Scroll if many products */
+            padding-right: 0.5rem; /* For scrollbar */
+        }
+         .bundle-products::-webkit-scrollbar {
+            width: 5px;
+        }
+        .bundle-products::-webkit-scrollbar-thumb {
+            background-color: rgba(255,255,255,0.4);
+            border-radius: 10px;
+        }
+        .bundle-product-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .bundle-product-item img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-left: 0.75rem; /* For RTL */
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .bundle-product-item-info {
+            font-size: 0.85rem;
+            flex-grow: 1;
+        }
+         .bundle-product-item-info .name {
+            font-weight: 500;
+         }
+         .bundle-product-item-info .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 0.75rem;
+         }
+        .bundle-product-item .view-product-btn {
+            color: var(--bundle-card-text-color);
+            opacity: 0.8;
+            font-size: 1rem;
+            transition: opacity 0.2s ease;
+        }
+        .bundle-product-item .view-product-btn:hover {
+            opacity: 1;
+        }
+
+        .bundle-pricing {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .bundle-original-price {
+            font-size: 0.9rem;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-bottom: 0.25rem;
+        }
+        .bundle-discounted-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bundle-card-text-color); /* Ensure it's visible on gradient */
+        }
+        .bundle-add-to-cart-btn {
+            display: block;
+            width: 100%;
+            background-color: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            color: var(--bundle-card-text-color);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .bundle-add-to-cart-btn:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+
+    </style>
+</head>
+<body class="text-[var(--text-primary)] bg-[var(--bg-primary)]">
+
+    <div class="bg-[var(--accent-color)] text-[var(--accent-text-color)] text-center py-2.5 text-sm font-medium">
+        ✨ ارسال رایگان برای سفارشات بالای ۳۵ دلار! ✨
+    </div>
+
+    <div class="hidden md:flex justify-end items-center text-xs py-1.5 text-[var(--text-secondary)] space-x-6 space-x-reverse ml-3">
+        <a href="#" class="hover:text-[var(--accent-color)] uppercase text-[0.7rem] font-medium">جوایز بیوتی اسکواد</a>
+        <a href="#" class="hover:text-[var(--accent-color)] uppercase text-[0.7rem] font-medium">فروشگاه‌ها</a>
+        <a href="#" class="hover:text-[var(--accent-color)] uppercase text-[0.7rem] font-medium">ثبت نام / ورود</a>
+        <button id="themeToggle" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors text-lg ml-3">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    <hr class="hidden md:block border-[var(--border-color)] opacity-75">
+
+
+    <header class="bg-[var(--nav-bg)] sticky top-0 z-50 nav-shadow">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="lg:hidden">
+                    <button id="mobileMenuButton" class="text-[var(--text-primary)] hover:text-[var(--accent-color)] focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-4xl font-bold gradient-text-elf">e.l.f.</a>
+                </div>
+                <div class="hidden lg:flex flex-grow max-w-xl mx-4">
+                    <input type="text" placeholder="جستجو..." class="w-full px-4 py-2 border border-[var(--input-border)] bg-[var(--input-bg)] text-[var(--text-primary)] rounded-full focus:ring-1 focus:ring-[var(--input-focus-ring)] focus:border-[var(--input-focus-ring)] outline-none transition-shadow text-sm">
+                </div>
+                <div class="flex items-center space-x-5 space-x-reverse">
+                    <button id="searchIconMobileToggle" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors lg:hidden"><i class="fas fa-search text-xl"></i></button>
+                    <a href="#" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors"><i class="far fa-user text-xl"></i></a>
+                    <button id="wishlistIconBtn" aria-label="علاقه‌مندی‌ها" class="relative text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors">
+                        <i class="far fa-heart text-xl"></i>
+                        <span id="wishlistItemCount" class="absolute -top-1 -left-2 bg-[var(--accent-color)] text-[var(--accent-text-color)] text-xs rounded-full h-4 w-4 flex items-center justify-center hidden">0</span>
+                    </button>
+                    <button id="cartIcon" aria-label="سبد خرید" class="relative text-[var(--text-secondary)] hover:text-[var(--accent-color)] transition-colors">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span id="cartItemCount" class="absolute -top-1 -left-2 bg-[var(--accent-color)] text-[var(--accent-text-color)] text-xs rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+             <div id="searchBarMobile" class="lg:hidden hidden py-2 search-bar-animation">
+                <input type="text" placeholder="جستجو برای محصولات..." class="w-full px-4 py-2.5 border border-[var(--input-border)] bg-[var(--input-bg)] text-[var(--text-primary)] rounded-lg focus:ring-1 focus:ring-[var(--input-focus-ring)] focus:border-[var(--input-focus-ring)] outline-none transition-shadow">
+            </div>
+        </div>
+        <nav class="hidden lg:flex justify-center items-center bg-[var(--nav-bg)] border-t border-b border-[var(--nav-category-border)] category-nav">
+            <a href="#new-arrivals">جدید</a>
+            <a href="#best-sellers">پرفروش‌ها</a>
+            <a href="#face-category">صورت</a>
+            <a href="#eyes-category">چشم</a>
+            <a href="#lips-category">لب</a>
+            <a href="#skin-care-category">مراقبت از پوست</a>
+            <a href="#tools-category">ابزارها</a>
+            <a href="#value-sets">مجموعه‌های ویژه</a>
+            <a href="#sale" class="text-[var(--accent-color)] font-bold hover:text-[var(--accent-hover-color)]">فروش ویژه</a>
+        </nav>
+    </header>
+
+    <div id="mobileMenu" class="fixed inset-0 z-50 lg:hidden mobile-menu"> <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 opacity-0 hidden transition-opacity duration-300"></div>
+        <div class="fixed top-0 right-0 h-full w-4/5 max-w-xs bg-[var(--nav-bg)] shadow-xl p-6 overflow-y-auto">
+            <div class="flex justify-between items-center mb-8">
+                <a href="#" class="text-2xl font-bold gradient-text-elf">e.l.f.</a>
+                <button id="closeMobileMenu" class="text-[var(--text-primary)] hover:text-[var(--accent-color)]">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-3">
+                <a href="#new-arrivals" class="text-[var(--nav-text)] hover:text-[var(--nav-hover-text)] text-md py-2.5 border-b border-[var(--border-color)]">جدید</a>
+                <a href="#best-sellers" class="text-[var(--nav-text)] hover:text-[var(--nav-hover-text)] text-md py-2.5 border-b border-[var(--border-color)]">پرفروش‌ها</a>
+                <a href="#face-category" class="text-[var(--nav-text)] hover:text-[var(--nav-hover-text)] text-md py-2.5 border-b border-[var(--border-color)]">صورت</a>
+                <a href="#eyes-category" class="text-[var(--nav-text)] hover:text-[var(--nav-hover-text)] text-md py-2.5 border-b border-[var(--border-color)]">چشم</a>
+                <a href="#lips-category" class="text-[var(--nav-text)] hover:text-[var(--nav-hover-text)] text-md py-2.5 border-b border-[var(--border-color)]">لب</a>
+                <a href="#skin-care-category" class="text-[var(--nav-text)] hover:text-[var(--nav-hover-text)] text-md py-2.5 border-b border-[var(--border-color)]">مراقبت از پوست</a>
+                <a href="#tools-category" class="text-[var(--nav-text)] hover:text-[var(--nav-hover-text)] text-md py-2.5 border-b border-[var(--border-color)]">ابزارها</a>
+                <a href="#value-sets" class="text-[var(--nav-text)] hover:text-[var(--nav-hover-text)] text-md py-2.5 border-b border-[var(--border-color)]">مجموعه‌های ویژه</a>
+                <a href="#sale" class="text-[var(--accent-color)] font-bold hover:text-[var(--accent-hover-color)] text-md py-2.5 border-b border-[var(--border-color)]">فروش ویژه</a>
+                 <hr class="my-4 border-[var(--border-color)]">
+                <a href="#" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] text-sm py-1.5 uppercase">جوایز بیوتی اسکواد</a>
+                <a href="#" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] text-sm py-1.5 uppercase">فروشگاه‌ها</a>
+                <a href="#" class="text-[var(--text-secondary)] hover:text-[var(--accent-color)] text-sm py-1.5 uppercase">ثبت نام / ورود</a>
+                <button id="mobileThemeToggle" class="w-full text-left text-[var(--text-secondary)] hover:text-[var(--accent-color)] text-sm py-2 mt-2 border-t border-[var(--border-color)]">
+                    تغییر تم <i class="fas fa-adjust ml-2"></i>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cartDrawerOverlay" class="cart-drawer-overlay"></div>
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>سبد خرید شما</h3>
+            <button id="cartCloseBtn" class="cart-close-btn" aria-label="بستن سبد خرید"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="cartBody" class="cart-body">
+             <p class="cart-empty-message">سبد خرید شما خالی است.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>مجموع:</span>
+                <span id="cartTotalAmount">۰.۰۰ دلار</span>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">پرداخت نهایی</button>
+            <button id="continueShoppingBtn" class="continue-shopping-btn">ادامه خرید</button>
+        </div>
+    </div>
+
+    <!-- Wishlist Drawer -->
+    <div id="wishlistDrawerOverlay" class="wishlist-drawer-overlay"></div>
+    <div id="wishlistDrawer" class="wishlist-drawer">
+        <div class="wishlist-header">
+            <h3>لیست علاقه‌مندی‌ها</h3>
+            <button id="wishlistCloseBtn" class="wishlist-close-btn" aria-label="بستن علاقه‌مندی‌ها"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="wishlistBody" class="wishlist-body">
+            <p class="wishlist-empty-message">لیست علاقه‌مندی‌های شما خالی است.</p>
+        </div>
+        <div class="wishlist-footer">
+            <button id="viewAllWishlistBtn" class="view-all-wishlist-btn">مشاهده همه علاقه‌مندی‌ها</button>
+        </div>
+    </div>
+
+
+    <!-- New Hero Carousel Section -->
+    <section class="hero-carousel-wrapper" aria-labelledby="hero-carousel-main-title">
+        <div class="hero-carousel-dynamic-bg-container">
+            <div class="hero-carousel-bg-layer" id="heroBgLayer1"></div>
+            <div class="hero-carousel-bg-layer" id="heroBgLayer2"></div>
+        </div>
+        <div class="hero-carousel-header">
+            <h2 id="hero-carousel-main-title" class="hero-carousel-main-title">محصولات خاص، ویژه شما</h2>
+            <p class="hero-carousel-subtitle">۱۵ خرداد ۱۴۰۳</p> 
+            <div class="hero-carousel-nav">
+                <button id="heroNext" aria-label="اسلاید بعدی"><i class="fas fa-arrow-right"></i></button> 
+                <button id="heroPrev" aria-label="اسلاید قبلی"><i class="fas fa-arrow-left"></i></button> 
+            </div>
+        </div>
+        <div class="hero-carousel" id="heroCarousel">
+            <div class="hero-carousel-slide active">
+                <img loading="lazy" src="/assets/img/pack1.jpg" alt="تصویر اسلاید ۱: پک محصولات تخصصی مراقبت از مو با تخفیف ویژه" class="slide-image">
+                <div class="slide-image-overlay"></div>
+                <div class="slide-content-box">
+                    <span class="category-tag">پک های تخصصی</span>
+                    <h2>پک ویژه مراقبت از مو های آسیب دیده</h2>
+                    <p>از موهای آسیب دیده به موهای بهتر</p>
+                    <a href="/pack-products/hair-care-pack" class="cta-button">جزئیات</a>
+                </div>
+            </div>
+            <div class="hero-carousel-slide next">
+                <img loading="lazy" src="/assets/img/2.png" alt="تصویر اسلاید ۲: محصولات فروش ویژه فصل" class="slide-image">
+                <div class="slide-image-overlay"></div>
+                 <div class="slide-content-box">
+                    <span class="category-tag">فروش ویژه فصل</span>
+                    <h2>حتما لازمت میشه</h2>
+                    <p>عینک پلاریزه مراقب چشماته</p>
+                    <a href="#best-sellers" class="cta-button">جزئیات</a>
+                </div>
+            </div>
+            <div class="hero-carousel-slide far-next"> 
+                <img loading="lazy" src="/assets/img/3.png" alt="تصویر اسلاید 3: استفاده از محصولات در عمل" class="slide-image">
+                <div class="slide-image-overlay"></div>
+                <div class="slide-content-box">
+                    <span class="category-tag">تجربه استفاده</span>
+                    <h2>خودت ببین!</h2>
+                    <p>همراه شو ، ببین و مال خودت رو بساز</p>
+                    <a href="#discover" class="cta-button">بزن بریم</a>
+                </div>
+            </div>
+             <div class="hero-carousel-slide far-next">
+                <img loading="lazy" src="/assets/img/4.png" alt="تصویر اسلاید ۴: محصولات آرایشی برای درخشش طبیعی" class="slide-image">
+                <div class="slide-image-overlay"></div>
+                <div class="slide-content-box">
+                    <span class="category-tag">محصولات مراقبت از پوست</span>
+                    <h2>درخشش زیبایی</h2>
+                    <p>همچون مروارید بدرخشید</p>
+                    <a href="#face-category" class="cta-button">محصولات صورت</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-12 bg-[var(--bg-secondary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-4">
+                    <i class="fas fa-leaf text-3xl text-[var(--accent-color)] mb-3"></i>
+                    <h3 class="text-lg font-semibold mb-1 text-[var(--text-primary)]">وگان و بدون تست حیوانی</h3>
+                    <p class="text-[var(--text-muted)] text-sm">زیبایی مهربان با حیوانات و سیاره.</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-check-circle text-3xl text-[var(--accent-color)] mb-3"></i>
+                    <h3 class="text-lg font-semibold mb-1 text-[var(--text-primary)]">کیفیت بالا</h3>
+                    <p class="text-[var(--text-muted)] text-sm">فرموله شده با مواد دوستدار پوست.</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-tag text-3xl text-[var(--accent-color)] mb-3"></i>
+                    <h3 class="text-lg font-semibold mb-1 text-[var(--text-primary)]">قیمت مناسب</h3>
+                    <p class="text-[var(--text-muted)] text-sm">محصولات برتر با قیمت‌های باورنکردنی.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="new-arrivals" class="py-16 bg-[var(--bg-primary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--text-primary)]">جدیدترین محصولات</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+                <a href="#" class="product-card-link group" aria-label="مشاهده جزئیات سرم درخشان کننده لومینوس">
+                    <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden transform transition-all duration-300 group-hover:shadow-xl shadow-[0_2px_10px_var(--card-shadow)]" data-product-name="سرم درخشان کننده لومینوس" data-product-price="12.00" data-product-image="/assets/img/luminus1.jpg">
+                        <div class="relative">
+                            <img loading="lazy" src="/assets/img/luminus1.jpg" alt="سرم درخشان کننده لومینوس" class="w-full h-72 object-cover">
+                            <div class="absolute top-2 left-2 bg-[var(--accent-color)] text-[var(--accent-text-color)] text-xs font-semibold px-2 py-1 rounded">جدید</div>
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="add-to-cart-action bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--button-secondary-hover-bg)] font-semibold py-2.5 px-5 rounded-full text-sm">
+                                    افزودن سریع <i class="fas fa-plus ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-md font-semibold text-[var(--text-primary)] mb-1 product-name-display">سرم درخشان کننده لومینوس</h3>
+                            <p class="text-[var(--text-muted)] text-sm mb-2">آبرسان و روشن کننده</p>
+                            <p class="text-[var(--accent-color)] font-bold text-lg product-price-display">۱۲.۰۰ دلار</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="product-card-link group" aria-label="مشاهده جزئیات رژ لب مات مخملی">
+                    <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden transform transition-all duration-300 group-hover:shadow-xl shadow-[0_2px_10px_var(--card-shadow)]" data-product-name="رژ لب مات مخملی" data-product-price="8.00" data-product-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <div class="relative">
+                            <img loading="lazy" src="/assets/img/lipstick1.jpg" alt="رژ لب مات مخملی" class="w-full h-72 object-cover">
+                            <div class="absolute top-2 left-2 bg-[var(--accent-color)] text-[var(--accent-text-color)] text-xs font-semibold px-2 py-1 rounded">جدید</div>
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="add-to-cart-action bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--button-secondary-hover-bg)] font-semibold py-2.5 px-5 rounded-full text-sm">
+                                    افزودن سریع <i class="fas fa-plus ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-md font-semibold text-[var(--text-primary)] mb-1 product-name-display">رژ لب مات مخملی</h3>
+                            <p class="text-[var(--text-muted)] text-sm mb-2">قرمز گیلاسی غنی</p>
+                            <p class="text-[var(--accent-color)] font-bold text-lg product-price-display">۸.۰۰ دلار</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="product-card-link group" aria-label="مشاهده جزئیات پاک کننده پوست پیور اسکین">
+                    <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden transform transition-all duration-300 group-hover:shadow-xl shadow-[0_2px_10px_var(--card-shadow)]" data-product-name="پاک کننده پوست پیور اسکین" data-product-price="10.00" data-product-image="/assets/img/ela-de-pure-tuv72brAXgk-unsplash.jpg">
+                        <div class="relative">
+                            <img loading="lazy" src="/assets/img/ela-de-pure-tuv72brAXgk-unsplash.jpg" alt="پاک کننده پوست پیور اسکین" class="w-full h-72 object-cover">
+                            <div class="absolute top-2 left-2 bg-[var(--accent-color)] text-[var(--accent-text-color)] text-xs font-semibold px-2 py-1 rounded">جدید</div>
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="add-to-cart-action bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--button-secondary-hover-bg)] font-semibold py-2.5 px-5 rounded-full text-sm">
+                                    افزودن سریع <i class="fas fa-plus ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-md font-semibold text-[var(--text-primary)] mb-1 product-name-display">پاک کننده پوست پیور اسکین</h3>
+                            <p class="text-[var(--text-muted)] text-sm mb-2">ملایم و موثر</p>
+                            <p class="text-[var(--accent-color)] font-bold text-lg product-price-display">۱۰.۰۰ دلار</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="product-card-link group" aria-label="مشاهده جزئیات برنزر سان‌کیسد">
+                    <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden transform transition-all duration-300 group-hover:shadow-xl shadow-[0_2px_10px_var(--card-shadow)]" data-product-name="برنزر سان‌کیسد" data-product-price="9.00" data-product-image="/assets/img/natallia-photo-eOyQsBmomek-unsplash.jpg">
+                        <div class="relative">
+                            <img loading="lazy" src="/assets/img/natallia-photo-eOyQsBmomek-unsplash.jpg" alt="برنزر سان‌کیسد" class="w-full h-72 object-cover">
+                            <div class="absolute top-2 left-2 bg-[var(--accent-color)] text-[var(--accent-text-color)] text-xs font-semibold px-2 py-1 rounded">جدید</div>
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="add-to-cart-action bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--button-secondary-hover-bg)] font-semibold py-2.5 px-5 rounded-full text-sm">
+                                    افزودن سریع <i class="fas fa-plus ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-md font-semibold text-[var(--text-primary)] mb-1 product-name-display">برنزر سان‌کیسد</h3>
+                            <p class="text-[var(--text-muted)] text-sm mb-2">گرمی طبیعی</p>
+                            <p class="text-[var(--accent-color)] font-bold text-lg product-price-display">۹.۰۰ دلار</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold py-3 px-10 rounded-full transition-transform transform hover:scale-105 shadow-md">
+                    مشاهده همه جدیدترین‌ها
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="best-sellers" class="py-16 bg-[var(--bg-tertiary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--text-primary)]">پرفروش‌ترین‌های ما</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+                <a href="#" class="product-card-link group" aria-label="مشاهده جزئیات پرایمر پوتی پورلس">
+                    <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden transform transition-all duration-300 group-hover:shadow-xl shadow-[0_2px_10px_var(--card-shadow)]" data-product-name="پرایمر پوتی پورلس" data-product-price="10.00" data-product-image="/assets/img/caroline-attwood-E1rH__X9SA0-unsplash.jpg">
+                        <div class="relative">
+                            <img loading="lazy" src="/assets/img/caroline-attwood-E1rH__X9SA0-unsplash.jpg" alt="پرایمر پوتی پورلس" class="w-full h-72 object-cover">
+                            <div class="absolute top-2 right-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded-full">داغ!</div>
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="add-to-cart-action bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--button-secondary-hover-bg)] font-semibold py-2.5 px-5 rounded-full text-sm">
+                                    افزودن سریع <i class="fas fa-plus ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-md font-semibold text-[var(--text-primary)] mb-1 product-name-display">پرایمر پوتی پورلس</h3>
+                            <p class="text-[var(--text-muted)] text-sm mb-2">پایه صاف و بی‌نقص</p>
+                            <p class="text-[var(--accent-color)] font-bold text-lg product-price-display">۱۰.۰۰ دلار</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="product-card-link group" aria-label="مشاهده جزئیات کانسیلر ۱۶ ساعته کامو">
+                    <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden transform transition-all duration-300 group-hover:shadow-xl shadow-[0_2px_10px_var(--card-shadow)]" data-product-name="کانسیلر ۱۶ ساعته کامو" data-product-price="7.00" data-product-image="/assets/img/imgs8.jpg">
+                        <div class="relative">
+                            <img loading="lazy" src="/assets/img/imgs8.jpg" alt="کانسیلر ۱۶ ساعته کامو" class="w-full h-72 object-cover">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="add-to-cart-action bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--button-secondary-hover-bg)] font-semibold py-2.5 px-5 rounded-full text-sm">
+                                    افزودن سریع <i class="fas fa-plus ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-md font-semibold text-[var(--text-primary)] mb-1 product-name-display">کانسیلر ۱۶ ساعته کامو</h3>
+                            <p class="text-[var(--text-muted)] text-sm mb-2">پوشش کامل، پایان مات</p>
+                            <p class="text-[var(--accent-color)] font-bold text-lg product-price-display">۷.۰۰ دلار</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="product-card-link group" aria-label="مشاهده جزئیات کرم صورت هولی هایدریشن!">
+                    <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden transform transition-all duration-300 group-hover:shadow-xl shadow-[0_2px_10px_var(--card-shadow)]" data-product-name="کرم صورت هولی هایدریشن!" data-product-price="13.00" data-product-image="/assets/img/cream1.avif">
+                        <div class="relative">
+                            <img loading="lazy" src="/assets/img/cream1.avif" alt="کرم صورت هولی هایدریشن!" class="w-full h-72 object-cover">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="add-to-cart-action bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--button-secondary-hover-bg)] font-semibold py-2.5 px-5 rounded-full text-sm">
+                                    افزودن سریع <i class="fas fa-plus ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-md font-semibold text-[var(--text-primary)] mb-1 product-name-display">کرم صورت هولی هایدریشن!</h3>
+                            <p class="text-[var(--text-muted)] text-sm mb-2">مغذی و مرطوب کننده</p>
+                            <p class="text-[var(--accent-color)] font-bold text-lg product-price-display">۱۳.۰۰ دلار</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="product-card-link group" aria-label="مشاهده جزئیات ژل ابرو واو براو">
+                    <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden transform transition-all duration-300 group-hover:shadow-xl shadow-[0_2px_10px_var(--card-shadow)]" data-product-name="ژل ابرو واو براو" data-product-price="5.00" data-product-image="https://images.unsplash.com/photo-1629198725509-9c8ebd8fde36?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <div class="relative">
+                            <img loading="lazy" src="/assets/img/dario-gomes-MoPGCgHPS6I-unsplash.jpg" alt="ژل ابرو واو براو" class="w-full h-72 object-cover">
+                            <div class="absolute top-2 right-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded-full">داغ!</div>
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="add-to-cart-action bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--button-secondary-hover-bg)] font-semibold py-2.5 px-5 rounded-full text-sm">
+                                    افزودن سریع <i class="fas fa-plus ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-md font-semibold text-[var(--text-primary)] mb-1 product-name-display">ژل ابرو واو براو</h3>
+                            <p class="text-[var(--text-muted)] text-sm mb-2">ژل فیبری حجم دهنده</p>
+                            <p class="text-[var(--accent-color)] font-bold text-lg product-price-display">۵.۰۰ دلار</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+             <div class="text-center mt-12">
+                <a href="#" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold py-3 px-10 rounded-full transition-transform transform hover:scale-105 shadow-md">
+                    خرید همه پرفروش‌ها
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-[var(--bg-primary)]">
+        <!-- <h2 class="text-3xl font-bold text-center mb-12 text-[var(--text-primary)]">ببینید چطور کار می‌کنند!</h2> -->
+        <video-carousel 
+            videos='[
+            {"src":"http://127.0.0.1:5500/assets/vid/a.mp4","title":"میخوای تیره نشه؟","description":"کرم پودری که معجزه می کنه","number":"1"},
+            {"src":"http://127.0.0.1:5500/assets/vid/b.mp4","title":"میخوای تیره نشه؟","description":"کرم پودری که معجزه می کنه","number":"2"},
+            {"src":"http://127.0.0.1:5500/assets/vid/c.mp4","title":"میخوای تیره نشه؟","description":"کرم پودری که معجزه می کنه","number":"3"},
+            {"src":"http://127.0.0.1:5500/assets/vid/d.mp4","title":"میخوای تیره نشه؟","description":"کرم پودری که معجزه می کنه","number":"1"},
+            {"src":"http://127.0.0.1:5500/assets/vid/e.mp4","title":"میخوای تیره نشه؟","description":"کرم پودری که معجزه می کنه","number":"2"},
+            {"src":"http://127.0.0.1:5500/assets/vid/f.mp4","title":"میخوای تیره نشه؟","description":"کرم پودری که معجزه می کنه","number":"3"}
+            ]'>
+        </video-carousel>
+    </section>
+
+
+    <section id="shop-by-category" class="py-16 bg-[var(--bg-primary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--text-primary)]">خرید بر اساس دسته‌بندی</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                <a href="#face-category" class="block group relative rounded-lg overflow-hidden shadow-lg aspect-square transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img loading="lazy" src="/assets/img/face1.jpg" alt="محصولات صورت" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6 transition-all duration-300 group-hover:from-black/80 group-hover:via-black/60">
+                        <h3 class="text-white text-xl md:text-2xl font-bold mb-1 group-hover:text-[var(--accent-color)] transition-colors">
+                            صورت
+                        </h3>
+                        <p class="text-gray-200 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
+                            پایه‌ای بی‌نقص برای آرایش خود با بهترین پرایمرها، کرم پودرها و کانسیلرهای ما بسازید.
+                        </p>
+                    </div>
+                </a>
+                <a href="#eyes-category" class="block group relative rounded-lg overflow-hidden shadow-lg aspect-square transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img loading="lazy" src="/assets/img/eye1.jpg" alt="محصولات چشم" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6 transition-all duration-300 group-hover:from-black/80 group-hover:via-black/60">
+                        <h3 class="text-white text-xl md:text-2xl font-bold mb-1 group-hover:text-[var(--accent-color)] transition-colors">
+                            چشم
+                        </h3>
+                        <p class="text-gray-200 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
+                            با پالت‌های سایه متنوع، ریمل‌های حجم‌دهنده و خط چشم‌های دقیق، نگاهی گیرا خلق کنید.
+                        </p>
+                    </div>
+                </a>
+                 <a href="#lips-category" class="block group relative rounded-lg overflow-hidden shadow-lg aspect-square transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img loading="lazy" src="/assets/img/lips1.jpg" alt="محصولات لب" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6 transition-all duration-300 group-hover:from-black/80 group-hover:via-black/60">
+                        <h3 class="text-white text-xl md:text-2xl font-bold mb-1 group-hover:text-[var(--accent-color)] transition-colors">
+                            لب
+                        </h3>
+                        <p class="text-gray-200 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
+                           مجموعه‌ای از رژلب‌ها، برق لب‌ها و خط لب‌ها در رنگ‌ها و بافت‌های متنوع برای لب‌هایی جذاب.
+                        </p>
+                    </div>
+                </a>
+                <a href="#skin-care-category" class="block group relative rounded-lg overflow-hidden shadow-lg aspect-square transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img loading="lazy" src="/assets/img/skin1.jpg" alt="محصولات مراقبت از پوست" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6 transition-all duration-300 group-hover:from-black/80 group-hover:via-black/60">
+                        <h3 class="text-white text-xl md:text-2xl font-bold mb-1 group-hover:text-[var(--accent-color)] transition-colors">
+                            پوست
+                        </h3>
+                        <p class="text-gray-200 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
+                            پوستی سالم و درخشان با محصولات مراقبتی ما، از پاک‌کننده‌ها تا سرم‌ها و مرطوب‌کننده‌ها.
+                        </p>
+                    </div>
+                </a>
+                <a href="#tools-category" class="block group relative rounded-lg overflow-hidden shadow-lg aspect-square transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img loading="lazy" src="/assets/img/toolbox1.jpg" alt="ابزارها و براش‌ها" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6 transition-all duration-300 group-hover:from-black/80 group-hover:via-black/60">
+                        <h3 class="text-white text-xl md:text-2xl font-bold mb-1 group-hover:text-[var(--accent-color)] transition-colors">
+                            ابزارها
+                        </h3>
+                        <p class="text-gray-200 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
+                           براش‌های باکیفیت و سایر ابزارهای ضروری برای اجرای بی‌نقص آرایش شما.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop by Use Section -->
+    <section id="shop-by-use" class="py-16 bg-[var(--bg-secondary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--text-primary)]">بر اساس کاربرد</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
+                <a href="#" class="use-category-card group">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 13C9.24 17.5 7 15.26 7 12.5S9.24 7.5 12 7.5s5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                    <h4>چشم</h4>
+                </a>
+                <a href="#" class="use-category-card group">
+                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2.5-3.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm-2.5-5c-1.93 0-3.5-1.57-3.5-3.5S9.57 6 12 6s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                    <h4>صورت</h4>
+                </a>
+                <a href="#" class="use-category-card group">
+                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.03 0-3.84-1.08-4.88-2.73-.22-.36-.01-.85.34-1.07.36-.22.85-.01 1.07.34C9.32 14.92 10.59 16 12 16s2.68-1.08 3.47-2.46c.22-.36.71-.56 1.07-.34.36.22.56.71.34 1.07C15.84 15.92 14.03 17 12 17z"/></svg>
+                    <h4>لب</h4>
+                </a>
+                <a href="#" class="use-category-card group">
+                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-5.33 0-9.74 4.14-10 9.4.16 4.97 4.27 9.1 9.3 9.55.2.01.39.02.59.02s.39-.01.59-.02c5.03-.45 9.14-4.58 9.3-9.55C21.74 6.14 17.33 2 12 2zm0 17c-4.03 0-7.36-2.84-7.93-6.5H19.93C19.36 16.16 16.03 19 12 19zm0-13c.69 0 1.33.11 1.93.31.29.1.59.01.79-.2s.2-6-.01-.79C13.92 6.11 13 6 12 6c-2.67 0-4.95 1.76-5.72 4.14-.1.29.01.59.2.79s.6.2.79.01C8.05 9.11 9.31 8 12 8z"/></svg>
+                    <h4>پوست</h4>
+                </a>
+                <a href="#" class="use-category-card group">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <h4>عمومی</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Value Sets/Bundles Section -->
+    <section id="value-sets" class="py-16 bg-[var(--bg-primary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--text-primary)]">پک‌های ویژه و اقتصادی</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Bundle Card 1 -->
+                <div class="bundle-card bundle-card-bg1" data-bundle-name="پک درخشش روزانه" data-bundle-price="25.00" data-bundle-image="/assets/img/toolbox1.jpg"> 
+                    <div>
+                        <h3 class="bundle-title">پک درخشش روزانه</h3>
+                        <p class="bundle-subtitle">هر آنچه برای یک آرایش روزانه بی‌نقص نیاز دارید.</p>
+                        <div class="bundle-products">
+                            <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/luminus1.jpg" alt="سرم لومینوس">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">سرم درخشان کننده لومینوس</span>
+                                    <span class="original-price">۱۲.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده سرم لومینوس"><i class="fas fa-eye"></i></a>
+                            </div>
+                            <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/olena-bohovyk-o6QtrLr_f7I-unsplash.jpg" alt="رژ لب مات">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">رژ لب مات مخملی</span>
+                                    <span class="original-price">۸.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده رژ لب مات"><i class="fas fa-eye"></i></a>
+                            </div>
+                             <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/caroline-attwood-E1rH__X9SA0-unsplash.jpg" alt="پرایمر پوتی">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">پرایمر پوتی پورلس</span>
+                                     <span class="original-price">۱۰.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده پرایمر پوتی"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bundle-pricing">
+                        <p class="bundle-original-price">مجموع: ۳۰.۰۰ دلار</p>
+                        <p class="bundle-discounted-price">قیمت پک: ۲۵.۰۰ دلار</p>
+                    </div>
+                    <button class="bundle-add-to-cart-btn add-to-cart-action">افزودن پک به سبد</button>
+                </div>
+                <!-- Bundle Card 2 -->
+                <div class="bundle-card bundle-card-bg2" data-bundle-name="پک مراقبت کامل پوست" data-bundle-price="29.00" data-bundle-image="https://images.unsplash.com/photo-1556228852-a8063915887a?q=80&w=280&auto=format&fit=crop">
+                     <div>
+                        <h3 class="bundle-title">پک مراقبت کامل پوست</h3>
+                        <p class="bundle-subtitle">روتین کامل برای پوستی سالم و شاداب.</p>
+                        <div class="bundle-products">
+                            <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/ela-de-pure-tuv72brAXgk-unsplash.jpg" alt="پاک کننده پیور اسکین">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">پاک کننده پوست پیور اسکین</span>
+                                    <span class="original-price">۱۰.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده پاک کننده پیور اسکین"><i class="fas fa-eye"></i></a>
+                            </div>
+                            <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/cream1.avif" alt="کرم هولی هایدریشن">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">کرم صورت هولی هایدریشن!</span>
+                                     <span class="original-price">۱۳.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده کرم هولی هایدریشن"><i class="fas fa-eye"></i></a>
+                            </div>
+                             <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/imgs6.jpg" alt="اسپری آبرسان">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">اسپری آب‌رسان صورت</span>
+                                     <span class="original-price">۱۱.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده اسپری آبرسان"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bundle-pricing">
+                        <p class="bundle-original-price">مجموع: ۳۴.۰۰ دلار</p>
+                        <p class="bundle-discounted-price">قیمت پک: ۲۹.۰۰ دلار</p>
+                    </div>
+                    <button class="bundle-add-to-cart-btn add-to-cart-action">افزودن پک به سبد</button>
+                </div>
+                <!-- Bundle Card 3 -->
+                <div class="bundle-card bundle-card-bg3" data-bundle-name="پک آرایش چشم حرفه‌ای" data-bundle-price="45.00" data-bundle-image="https://images.unsplash.com/photo-1583241800971-89b916a2f070?q=80&w=280&auto=format&fit=crop">
+                     <div>
+                        <h3 class="bundle-title">پک آرایش چشم حرفه‌ای</h3>
+                        <p class="bundle-subtitle">تمام ابزار لازم برای یک نگاه خیره‌کننده.</p>
+                        <div class="bundle-products">
+                            <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/pallet1.jpg" alt="پالت سایه نوود">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">پالت سایه چشم نوود</span>
+                                    <span class="original-price">۲۵.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده پالت سایه نوود"><i class="fas fa-eye"></i></a>
+                            </div>
+                            <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/mascara1.jpg" alt="ریمل حجم دهنده">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">ریمل حجم‌دهنده قوی</span>
+                                    <span class="original-price">۱۶.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده ریمل حجم دهنده"><i class="fas fa-eye"></i></a>
+                            </div>
+                             <div class="bundle-product-item">
+                                <img loading="lazy" src="/assets/img/eyeliner1.jpg" alt="خط چشم ماژیکی">
+                                <div class="bundle-product-item-info">
+                                    <span class="name">خط چشم ماژیکی دقیق</span>
+                                    <span class="original-price">۱۲.۰۰ دلار</span>
+                                </div>
+                                <a href="#" class="view-product-btn" aria-label="مشاهده خط چشم ماژیکی"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bundle-pricing">
+                        <p class="bundle-original-price">مجموع: ۵۳.۰۰ دلار</p>
+                        <p class="bundle-discounted-price">قیمت پک: ۴۵.۰۰ دلار</p>
+                    </div>
+                    <button class="bundle-add-to-cart-btn add-to-cart-action">افزودن پک به سبد</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="discover" class="py-20 bg-[var(--accent-color)] text-[var(--accent-text-color)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">تفاوت e.l.f. را کشف کنید</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">
+                ما به زیبایی لوکس برای همه اعتقاد داریم. به همین دلیل محصولات زیبایی با کیفیت بالا و مد روز تولید می‌کنیم که همیشه وگان، بدون تست حیوانی و با قیمت مناسب هستند.
+            </p>
+            <a href="#" class="bg-[var(--bg-primary)] text-[var(--accent-color)] font-semibold py-3 px-10 rounded-full text-lg transition-transform transform hover:scale-105 shadow-lg">
+                داستان ما را بخوانید
+            </a>
+        </div>
+    </section>
+
+    <section id="social-proof" class="py-16 bg-[var(--bg-primary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[var(--text-primary)]">#elfcosmetics</h2>
+            <p class="text-center text-[var(--text-muted)] mb-10 text-lg">ظاهر خود را به ما نشان دهید! elfcosmetics@ را تگ کنید تا شانس نمایش داده شدن داشته باشید.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                <div class="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <img loading="lazy" src="https://placehold.co/300x300/fbcfe8/db2777?text=User+Look+1" alt="User Look 1" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <img loading="lazy" src="https://placehold.co/300x300/fce7f3/c026d3?text=User+Style+2" alt="User Style 2" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <img loading="lazy" src="https://placehold.co/300x300/fde6f3/9d174d?text=User+Glam+3" alt="User Glam 3" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <img loading="lazy" src="https://placehold.co/300x300/fdf2f8/86198f?text=User+Vibe+4" alt="User Vibe 4" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <img loading="lazy" src="https://placehold.co/300x300/fce7f3/500724?text=User+Art+5" alt="User Art 5" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured-collections" class="py-16 bg-[var(--bg-secondary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-12 horizontal-slider-wrapper" role="region" aria-labelledby="slider1-title">
+                <h3 id="slider1-title" class="text-2xl font-bold text-[var(--text-primary)] mb-6 text-center md:text-right">مجموعه منتخب شیک</h3>
+                <button role="button" aria-label="اسلاید بعدی محصولات شیک" class="slider-nav-button prev"><i class="fas fa-chevron-left"></i></button> <div class="horizontal-product-slider">
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات کرم پودر ابریشمی"><div class="product-card-style-1" data-product-name="کرم پودر ابریشمی" data-product-price="22.00" data-product-image="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=280&auto=format&fit=crop" alt="محصول شیک ۱">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">کرم پودر ابریشمی</h4>
+                                <p class="p-desc">پوشش طبیعی و ماندگار</p>
+                                <p class="p-price">۲۲.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات رژگونه هلویی ملایم"><div class="product-card-style-1" data-product-name="رژگونه هلویی ملایم" data-product-price="14.00" data-product-image="/assets/img/blush1.jpg">
+                        <img loading="lazy" src="/assets/img/blush1.jpg" alt="محصول شیک ۲">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">رژگونه هلویی ملایم</h4>
+                                <p class="p-desc">درخشش طبیعی و زیبا</p>
+                                <p class="p-price">۱۴.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات هایلایتر مایع صدفی"><div class="product-card-style-1" data-product-name="هایلایتر مایع صدفی" data-product-price="18.00" data-product-image="/assets/img/highlighter1.jpg">
+                        <img loading="lazy" src="/assets/img/highlighter1.jpg" alt="محصول شیک ۳">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">هایلایتر مایع صدفی</h4>
+                                <p class="p-desc">برای درخشندگی خیره کننده</p>
+                                <p class="p-price">۱۸.۰۰ دلار</p>
+                            </div>
+                             <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات پالت سایه چشم نوود"><div class="product-card-style-1" data-product-name="پالت سایه چشم نوود" data-product-price="25.00" data-product-image="/assets/img/pallet1.jpg">
+                        <img loading="lazy" src="/assets/img/pallet1.jpg" alt="محصول شیک ۴">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">پالت سایه چشم نوود</h4>
+                                <p class="p-desc">رنگ‌های کاربردی روزانه</p>
+                                <p class="p-price">۲۵.۰۰ دلار</p>
+                            </div>
+                             <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ریمل حجم‌دهنده قوی"><div class="product-card-style-1" data-product-name="ریمل حجم‌دهنده قوی" data-product-price="16.00" data-product-image="/assets/img/mascara1.jpg">
+                        <img loading="lazy" src="/assets/img/mascara1.jpg" alt="محصول شیک ۵">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">ریمل حجم‌دهنده قوی</h4>
+                                <p class="p-desc">مژه‌هایی پرپشت و بلند</p>
+                                <p class="p-price">۱۶.۰۰ دلار</p>
+                            </div>
+                             <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات خط چشم ماژیکی دقیق"><div class="product-card-style-1" data-product-name="خط چشم ماژیکی دقیق" data-product-price="12.00" data-product-image="/assets/img/eyeliner1.jpg">
+                        <img loading="lazy" src="/assets/img/eyeliner1.jpg" alt="محصول شیک ۶">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">خط چشم ماژیکی دقیق</h4>
+                                <p class="p-desc">ضد آب با ماندگاری بالا</p>
+                                <p class="p-price">۱۲.۰۰ دلار</p>
+                            </div>
+                             <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات بالم لب مرطوب‌کننده"><div class="product-card-style-1" data-product-name="بالم لب مرطوب‌کننده" data-product-price="9.00" data-product-image="/assets/img/balm1.jpg">
+                        <img loading="lazy" src="/assets/img/balm1.jpg" alt="محصول شیک ۷">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">بالم لب مرطوب‌کننده</h4>
+                                <p class="p-desc">با رایحه میوه‌ای دلپذیر</p>
+                                <p class="p-price">۹.۰۰ دلار</p>
+                            </div>
+                             <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات اسپری فیکس‌کننده آرایش"><div class="product-card-style-1" data-product-name="اسپری فیکس‌کننده آرایش" data-product-price="15.00" data-product-image="/assets/img/fixatorspray.jpg">
+                        <img loading="lazy" src="/assets/img/fixatorspray.jpg" alt="محصول شیک ۸">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">اسپری فیکس‌کننده آرایش</h4>
+                                <p class="p-desc">افزایش دوام آرایش شما</p>
+                                <p class="p-price">۱۵.۰۰ دلار</p>
+                            </div>
+                             <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ست براش حرفه‌ای"><div class="product-card-style-1" data-product-name="ست براش حرفه‌ای" data-product-price="30.00" data-product-image="/assets/img/brushset.jpg">
+                        <img loading="lazy" src="/assets/img/brushset.jpg" alt="محصول شیک ۹">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">ست براش حرفه‌ای</h4>
+                                <p class="p-desc">الیاف نرم و با کیفیت</p>
+                                <p class="p-price">۳۰.۰۰ دلار</p>
+                            </div>
+                             <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات روغن پاک‌کننده آرایش"><div class="product-card-style-1" data-product-name="روغن پاک‌کننده آرایش" data-product-price="19.00" data-product-image="https://images.unsplash.com/photo-1604195399439-3e2a6f331f0f?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1604195399439-3e2a6f331f0f?q=80&w=280&auto=format&fit=crop" alt="محصول شیک ۱۰">
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">روغن پاک‌کننده آرایش</h4>
+                                <p class="p-desc">پاکسازی عمیق و ملایم</p>
+                                <p class="p-price">۱۹.۰۰ دلار</p>
+                            </div>
+                             <button class="add-to-cart-btn-style1 add-to-cart-action mt-3">افزودن به سبد</button>
+                        </div>
+                    </div></a>
+                </div>
+                <button role="button" aria-label="اسلاید قبلی محصولات شیک" class="slider-nav-button next"><i class="fas fa-chevron-right"></i></button> </div>
+
+            <div class="mb-12 horizontal-slider-wrapper" role="region" aria-labelledby="slider2-title">
+                <h3 id="slider2-title" class="text-2xl font-bold text-[var(--text-primary)] mb-6 text-center md:text-right">جدیدترین‌های پرطرفدار</h3>
+                <button role="button" aria-label="اسلاید بعدی محصولات پرطرفدار" class="slider-nav-button prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="horizontal-product-slider">
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات پالت سایه رنگین‌کمانی"><div class="product-card-style-2" data-product-name="پالت سایه رنگین‌کمانی" data-product-price="28.00" data-product-image="https://images.unsplash.com/photo-1512207846876-bb54ef50562e?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1512207846876-bb54ef50562e?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۱">
+                        <div class="p-info-overlay">
+                            <div class="flex-grow">
+                                <h4 class="p-name">پالت سایه رنگین‌کمانی</h4>
+                                <p class="p-price">۲۸.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن پالت سایه رنگین‌کمانی به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات رژ لب مایع متالیک"><div class="product-card-style-2" data-product-name="رژ لب مایع متالیک" data-product-price="17.00" data-product-image="https://images.unsplash.com/photo-1611781409837-a7c20eb1a298?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1611781409837-a7c20eb1a298?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۲">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">رژ لب مایع متالیک</h4>
+                                <p class="p-price">۱۷.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن رژ لب مایع متالیک به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات خط چشم نئونی صورتی"><div class="product-card-style-2" data-product-name="خط چشم نئونی صورتی" data-product-price="13.00" data-product-image="https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۳">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">خط چشم نئونی صورتی</h4>
+                                <p class="p-price">۱۳.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن خط چشم نئونی صورتی به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات هایلایتر پودری کهکشانی"><div class="product-card-style-2" data-product-name="هایلایتر پودری کهکشانی" data-product-price="20.00" data-product-image="https://images.unsplash.com/photo-1599372816282-52b6a00918fb?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1599372816282-52b6a00918fb?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۴">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">هایلایتر پودری کهکشانی</h4>
+                                <p class="p-price">۲۰.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن هایلایتر پودری کهکشانی به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات لاک ناخن هولوگرافیک"><div class="product-card-style-2" data-product-name="لاک ناخن هولوگرافیک" data-product-price="10.00" data-product-image="https://images.unsplash.com/photo-1603050928694-369657a0595a?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1603050928694-369657a0595a?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۵">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">لاک ناخن هولوگرافیک</h4>
+                                <p class="p-price">۱۰.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن لاک ناخن هولوگرافیک به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات موس پاک کننده صورت"><div class="product-card-style-2" data-product-name="موس پاک کننده صورت" data-product-price="14.00" data-product-image="https://images.unsplash.com/photo-1566773533245-a9f5f1989574?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1566773533245-a9f5f1989574?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۶">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">موس پاک کننده صورت</h4>
+                                <p class="p-price">۱۴.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن موس پاک کننده صورت به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات اسپری بدن براق"><div class="product-card-style-2" data-product-name="اسپری بدن براق" data-product-price="16.00" data-product-image="https://images.unsplash.com/photo-1575410227098-381d01904904?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1575410227098-381d01904904?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۷">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">اسپری بدن براق</h4>
+                                <p class="p-price">۱۶.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن اسپری بدن براق به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ماسک لب شبانه"><div class="product-card-style-2" data-product-name="ماسک لب شبانه" data-product-price="15.00" data-product-image="https://images.unsplash.com/photo-1608068061017-8a01750052ad?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1608068061017-8a01750052ad?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۸">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">ماسک لب شبانه</h4>
+                                <p class="p-price">۱۵.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن ماسک لب شبانه به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ست مینی رژ لب"><div class="product-card-style-2" data-product-name="ست مینی رژ لب" data-product-price="24.00" data-product-image="https://images.unsplash.com/photo-1590150009444-086107dd3103?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1590150009444-086107dd3103?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۹">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">ست مینی رژ لب</h4>
+                                <p class="p-price">۲۴.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن ست مینی رژ لب به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات پرایمر مات کننده"><div class="product-card-style-2" data-product-name="پرایمر مات کننده" data-product-price="11.00" data-product-image="https://images.unsplash.com/photo-1617897469834-00765b031952?q=80&w=280&auto=format&fit=crop">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1617897469834-00765b031952?q=80&w=280&auto=format&fit=crop" alt="محصول پرطرفدار ۱۰">
+                        <div class="p-info-overlay">
+                             <div class="flex-grow">
+                                <h4 class="p-name">پرایمر مات کننده</h4>
+                                <p class="p-price">۱۱.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn-style2 add-to-cart-action" aria-label="افزودن پرایمر مات کننده به سبد خرید"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div></a>
+                </div>
+                <button role="button" aria-label="اسلاید قبلی محصولات پرطرفدار" class="slider-nav-button next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="horizontal-slider-wrapper mb-12" role="region" aria-labelledby="slider3-title">
+                <h3 id="slider3-title" class="text-2xl font-bold text-[var(--text-primary)] mb-6 text-center md:text-right">مجموعه لوکس و خاص</h3>
+                <button role="button" aria-label="اسلاید بعدی محصولات لوکس" class="slider-nav-button prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="horizontal-product-slider">
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات سرم ضد پیری طلا"><div class="product-card-style-3" data-product-name="سرم ضد پیری طلا" data-product-price="45.00" data-product-image="https://images.unsplash.com/photo-1571875257727-256c16c40a55?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1571875257727-256c16c40a55?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۱">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">سرم ضد پیری طلا</h4>
+                                <p class="p-category">مراقبت از پوست لوکس</p>
+                                <p class="p-price">۴۵.۰۰ دلار</p>
+                            </div>
+                            <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات کرم شب خاویار"><div class="product-card-style-3" data-product-name="کرم شب خاویار" data-product-price="55.00" data-product-image="https://images.unsplash.com/photo-1605204859996-e0f8e9989138?q=80&w=280&auto=format&fit=crop">
+                         <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1605204859996-e0f8e9989138?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۲">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">کرم شب خاویار</h4>
+                                <p class="p-category">بازسازی کننده پوست</p>
+                                <p class="p-price">۵۵.۰۰ دلار</p>
+                            </div>
+                             <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات پالت آرایش کامل دیلوکس"><div class="product-card-style-3" data-product-name="پالت آرایش کامل دیلوکس" data-product-price="70.00" data-product-image="https://images.unsplash.com/photo-1556228852-a8063915887a?q=80&w=280&auto=format&fit=crop">
+                         <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1556228852-a8063915887a?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۳">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">پالت آرایش کامل دیلوکس</h4>
+                                <p class="p-category">همه چیز در یک پالت</p>
+                                <p class="p-price">۷۰.۰۰ دلار</p>
+                            </div>
+                             <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات عطر زنانه اکلت"><div class="product-card-style-3" data-product-name="عطر زنانه اکلت" data-product-price="65.00" data-product-image="https://images.unsplash.com/photo-1595475884887-05810d6e19d0?q=80&w=280&auto=format&fit=crop">
+                         <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1595475884887-05810d6e19d0?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۴">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">عطر زنانه اکلت</h4>
+                                <p class="p-category">رایحه ای فراموش نشدنی</p>
+                                <p class="p-price">۶۵.۰۰ دلار</p>
+                            </div>
+                             <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ست مراقبت از پوست الماس"><div class="product-card-style-3" data-product-name="ست مراقبت از پوست الماس" data-product-price="120.00" data-product-image="https://images.unsplash.com/photo-1516971000342-9b07595c7924?q=80&w=280&auto=format&fit=crop">
+                         <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1516971000342-9b07595c7924?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۵">
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">ست مراقبت از پوست الماس</h4>
+                                <p class="p-category">جوانسازی و درخشندگی</p>
+                                <p class="p-price">۱۲۰.۰۰ دلار</p>
+                            </div>
+                             <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات روغن بدن آرگان خالص"><div class="product-card-style-3" data-product-name="روغن بدن آرگان خالص" data-product-price="35.00" data-product-image="https://images.unsplash.com/photo-1560099006-0a093c998e6c?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1560099006-0a093c998e6c?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۶">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">روغن بدن آرگان خالص</h4>
+                                <p class="p-category">تغذیه کننده و نرم کننده</p>
+                                <p class="p-price">۳۵.۰۰ دلار</p>
+                            </div>
+                            <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات کرم دور چشم پپتاید"><div class="product-card-style-3" data-product-name="کرم دور چشم پپتاید" data-product-price="48.00" data-product-image="https://images.unsplash.com/photo-1619196823470-123a08c4a382?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1619196823470-123a08c4a382?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۷">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">کرم دور چشم پپتاید</h4>
+                                <p class="p-category">ضد چروک و تیرگی</p>
+                                <p class="p-price">۴۸.۰۰ دلار</p>
+                            </div>
+                            <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ست مانیکور حرفه‌ای"><div class="product-card-style-3" data-product-name="ست مانیکور حرفه‌ای" data-product-price="50.00" data-product-image="https://images.unsplash.com/photo-1588790203357-89a113517d04?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1588790203357-89a113517d04?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۸">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">ست مانیکور حرفه‌ای</h4>
+                                <p class="p-category">ابزار دقیق و با دوام</p>
+                                <p class="p-price">۵۰.۰۰ دلار</p>
+                            </div>
+                            <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ماسک صورت زغال فعال"><div class="product-card-style-3" data-product-name="ماسک صورت زغال فعال" data-product-price="32.00" data-product-image="https://images.unsplash.com/photo-1599305000738-0a4a269cad1e?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1599305000738-0a4a269cad1e?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۹">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">ماسک صورت زغال فعال</h4>
+                                <p class="p-category">پاکسازی منافذ عمیق</p>
+                                <p class="p-price">۳۲.۰۰ دلار</p>
+                            </div>
+                            <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                     <a href="#" class="product-card-link" aria-label="مشاهده جزئیات شمع معطر لوکس"><div class="product-card-style-3" data-product-name="شمع معطر لوکس" data-product-price="40.00" data-product-image="https://images.unsplash.com/photo-1575004880242-6aa08b470509?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-container">
+                           <img loading="lazy" src="https://images.unsplash.com/photo-1575004880242-6aa08b470509?q=80&w=280&auto=format&fit=crop" alt="محصول لوکس ۱۰">
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">شمع معطر لوکس</h4>
+                                <p class="p-category">رایحه آرامش بخش</p>
+                                <p class="p-price">۴۰.۰۰ دلار</p>
+                            </div>
+                            <div class="p-action"><button class="add-to-cart-btn-style3 add-to-cart-action">افزودن به سبد</button></div>
+                        </div>
+                    </div></a>
+                </div>
+                <button role="button" aria-label="اسلاید قبلی محصولات لوکس" class="slider-nav-button next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="horizontal-slider-wrapper" role="region" aria-labelledby="slider4-title">
+                <h3 id="slider4-title" class="text-2xl font-bold text-[var(--text-primary)] mb-6 text-center md:text-right">پیشنهادهای ویژه ما</h3>
+                <button role="button" aria-label="اسلاید بعدی پیشنهادهای ویژه" class="slider-nav-button prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="horizontal-product-slider">
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ست رژ لب مایع کلاسیک"><div class="product-card-style-4" data-product-name="ست رژ لب مایع کلاسیک" data-product-price="29.99" data-product-image="https://images.unsplash.com/photo-1590159763040-809a186af024?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1590159763040-809a186af024?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۱">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                            <div>
+                                <h4 class="p-name">ست رژ لب مایع کلاسیک</h4>
+                                <p class="p-desc">مجموعه‌ای از رنگ‌های محبوب</p>
+                                <p class="p-price">۲۹.۹۹ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات کرم مرطوب‌کننده روزانه SPF30"><div class="product-card-style-4" data-product-name="کرم مرطوب‌کننده روزانه SPF30" data-product-price="17.50" data-product-image="https://images.unsplash.com/photo-1617897469844-015f54d7def7?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1617897469844-015f54d7def7?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۲">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">کرم مرطوب‌کننده روزانه SPF30</h4>
+                                <p class="p-desc">محافظت و آبرسانی کامل</p>
+                                <p class="p-price">۱۷.۵۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات پالت کانتور و هایلایت حرفه‌ای"><div class="product-card-style-4" data-product-name="پالت کانتور و هایلایت حرفه‌ای" data-product-price="21.00" data-product-image="https://images.unsplash.com/photo-1591154839036-8e9b36d0f1bd?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1591154839036-8e9b36d0f1bd?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۳">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">پالت کانتور و هایلایت حرفه‌ای</h4>
+                                <p class="p-desc">برای تعریف بی‌نقص چهره</p>
+                                <p class="p-price">۲۱.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات مداد ابرو دوکاره با براش"><div class="product-card-style-4" data-product-name="مداد ابرو دوکاره با براش" data-product-price="9.75" data-product-image="https://images.unsplash.com/photo-1587786017534-add29885c93d?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1587786017534-add29885c93d?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۴">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">مداد ابرو دوکاره با براش</h4>
+                                <p class="p-desc">طراحی طبیعی و دقیق ابرو</p>
+                                <p class="p-price">۹.۷۵ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات بالم پاک‌کننده آرایش ملایم"><div class="product-card-style-4" data-product-name="بالم پاک‌کننده آرایش ملایم" data-product-price="14.00" data-product-image="https://images.unsplash.com/photo-1570695049383-950ca5003dec?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1570695049383-950ca5003dec?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۵">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">بالم پاک‌کننده آرایش ملایم</h4>
+                                <p class="p-desc">مناسب انواع پوست</p>
+                                <p class="p-price">۱۴.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات اسپری آب‌رسان صورت با آلوئه‌ورا"><div class="product-card-style-4" data-product-name="اسپری آب‌رسان صورت با آلوئه‌ورا" data-product-price="11.00" data-product-image="/assets/img/imgs6.jpg">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="/assets/img/imgs6.jpg" alt="پیشنهاد ویژه ۶">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">اسپری آب‌رسان صورت با آلوئه‌ورا</h4>
+                                <p class="p-desc">طراوت‌بخش و التیام‌دهنده</p>
+                                <p class="p-price">۱۱.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات پودر فیکس بی‌رنگ HD"><div class="product-card-style-4" data-product-name="پودر فیکس بی‌رنگ HD" data-product-price="18.50" data-product-image="https://images.unsplash.com/photo-1608774356143-b0900136d913?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1608774356143-b0900136d913?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۷">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">پودر فیکس بی‌رنگ HD</h4>
+                                <p class="p-desc">مات‌کننده و افزایش دوام آرایش</p>
+                                <p class="p-price">۱۸.۵۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات برق لب حجم‌دهنده شاین‌دار"><div class="product-card-style-4" data-product-name="برق لب حجم‌دهنده شاین‌دار" data-product-price="13.00" data-product-image="https://images.unsplash.com/photo-1519415943484-2fa187344dbd?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1519415943484-2fa187344dbd?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۸">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">برق لب حجم‌دهنده شاین‌دار</h4>
+                                <p class="p-desc">لب‌هایی جذاب و پرتر</p>
+                                <p class="p-price">۱۳.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ست براش مسافرتی مینی"><div class="product-card-style-4" data-product-name="ست براش مسافرتی مینی" data-product-price="19.00" data-product-image="https://images.unsplash.com/photo-1607006528154-368e4f6ea9d4?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1607006528154-368e4f6ea9d4?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۹">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">ست براش مسافرتی مینی</h4>
+                                <p class="p-desc">همراه همیشگی شما</p>
+                                <p class="p-price">۱۹.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                    <a href="#" class="product-card-link" aria-label="مشاهده جزئیات ماسک ورقه‌ای روشن‌کننده ویتامین C"><div class="product-card-style-4" data-product-name="ماسک ورقه‌ای روشن‌کننده ویتامین C" data-product-price="7.00" data-product-image="https://images.unsplash.com/photo-1567449549431-850891297cea?q=80&w=280&auto=format&fit=crop">
+                        <div class="img-wrapper">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1567449549431-850891297cea?q=80&w=280&auto=format&fit=crop" alt="پیشنهاد ویژه ۱۰">
+                            <button class="wishlist-btn" aria-label="افزودن به علاقه‌مندی‌ها"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="p-info">
+                             <div>
+                                <h4 class="p-name">ماسک ورقه‌ای روشن‌کننده ویتامین C</h4>
+                                <p class="p-desc">پوستی شفاف و درخشان</p>
+                                <p class="p-price">۷.۰۰ دلار</p>
+                            </div>
+                            <button class="add-to-cart-btn add-to-cart-action">افزودن به سبد خرید</button>
+                        </div>
+                    </div></a>
+                </div>
+                <button role="button" aria-label="اسلاید قبلی پیشنهادهای ویژه" class="slider-nav-button next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="faq-section py-16" id="faq">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--text-primary)]">سوالات متداول مراقبت از پوست</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-1">
+                        <span>چطور بفهمم پوستم خشک است یا دهیدراته (کم آب)؟</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-1" role="region">
+                        <p>پوست خشک معمولاً به طور طبیعی چربی کمتری تولید می‌کند و ممکن است احساس کشیدگی، زبری یا پوسته‌پوسته شدن داشته باشید. این یک نوع پوست است. اما پوست دهیدراته به کمبود آب در لایه‌های بالایی پوست اشاره دارد و می‌تواند در هر نوع پوستی (حتی چرب) رخ دهد. علائم پوست دهیدراته شامل کدری، احساس سفتی و نمایان‌تر شدن خطوط ریز است. محصولات آبرسان مانند آنهایی که حاوی هیالورونیک اسید هستند برای هر دو مفیدند، اما پوست خشک به مرطوب‌کننده‌های غنی‌تر برای جبران کمبود چربی نیز نیاز دارد.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-2">
+                        <span>بهترین روتین صبحگاهی برای پوست خشک چیست؟</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-2" role="region">
+                        <p>یک روتین صبحگاهی خوب برای پوست خشک باید بر آبرسانی و محافظت تمرکز کند:
+                            <br>۱. **پاکسازی ملایم:** با یک پاک‌کننده کرمی یا شیری که چربی طبیعی پوست را از بین نمی‌برد.
+                            <br>۲. **تونر آبرسان (اختیاری):** برای آماده‌سازی پوست و افزایش جذب محصولات بعدی.
+                            <br>۳. **سرم آبرسان:** سرمی حاوی هیالورونیک اسید یا گلیسیرین برای جذب رطوبت.
+                            <br>۴. **مرطوب‌کننده قوی:** یک کرم مرطوب‌کننده غنی که به حفظ رطوبت و تقویت سد دفاعی پوست کمک کند.
+                            <br>۵. **ضد آفتاب:** همیشه از ضد آفتاب با SPF 30 یا بالاتر استفاده کنید، حتی در روزهای ابری.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-3">
+                        <span>آیا استفاده روزانه از مرطوب‌کننده برای پوست خشک ضروری است؟ حتی اگر آرایش نکنم؟</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-3" role="region">
+                        <p>بله، کاملاً ضروری است! مرطوب‌کننده نه تنها رطوبت مورد نیاز پوست خشک را تامین می‌کند، بلکه به تقویت سد دفاعی پوست کمک کرده و از آن در برابر عوامل محیطی محافظت می‌کند. حتی اگر آرایش نمی‌کنید، پوست شما همچنان در معرض خشکی ناشی از هوا، باد و سایر عوامل است. استفاده منظم از مرطوب‌کننده به حفظ نرمی، لطافت و سلامت پوست خشک کمک شایانی می‌کند.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-4">
+                        <span>چه اشتباهات رایجی در مراقبت از پوست خشک وجود دارد که باید از آنها اجتناب کنم؟</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-4" role="region">
+                        <p>چند اشتباه رایج وجود دارد که می‌تواند خشکی پوست را تشدید کند:
+                            <br>- **شستشو با آب داغ:** آب داغ چربی طبیعی پوست را از بین می‌برد. از آب ولرم استفاده کنید.
+                            <br>- **استفاده از پاک‌کننده‌های قوی:** پاک‌کننده‌های حاوی سولفات یا الکل می‌توانند پوست را بیشتر خشک کنند.
+                            <br>- **لایه‌برداری بیش از حد:** اگرچه لایه‌برداری برای حذف سلول‌های مرده مفید است، اما زیاده‌روی در آن به سد دفاعی پوست آسیب می‌زند.
+                            <br>- **عدم استفاده از مرطوب‌کننده بلافاصله پس از شستشو:** بهترین زمان برای استفاده از مرطوب‌کننده زمانی است که پوست هنوز کمی نم دارد.
+                            <br>- **نادیده گرفتن اهمیت نوشیدن آب کافی:** آبرسانی داخلی نیز به اندازه آبرسانی خارجی مهم است.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-5">
+                        <span>برای جلوگیری از پوسته پوسته شدن آرایش روی پوست خشک چه کار کنم؟</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-5" role="region">
+                        <p>پوسته پوسته شدن آرایش یک مشکل رایج برای پوست‌های خشک است. برای جلوگیری از آن:
+                            <br>۱. **آماده‌سازی پوست:** قبل از آرایش، پوست خود را با یک مرطوب‌کننده قوی و یک پرایمر آبرسان آماده کنید. لاین Holy Hydration ما گزینه‌های خوبی دارد.
+                            <br>۲. **انتخاب کرم پودر مناسب:** از کرم پودرهای مایع یا کرمی با فرمولاسیون آبرسان استفاده کنید. از کرم پودرهای مات و پودری که می‌توانند خشکی را بیشتر نشان دهند، اجتناب کنید.
+                            <br>۳. **روش استفاده:** کرم پودر را با یک اسفنج آرایشی مرطوب یا با انگشتان به آرامی روی پوست پخش کنید. از مالیدن بیش از حد خودداری کنید.
+                            <br>۴. **استفاده محدود از پودر:** فقط در صورت نیاز و به مقدار کم از پودر فیکس استفاده کنید، ترجیحاً پودرهای شفاف و سبک.
+                            <br>۵. **اسپری فیکس آبرسان:** در انتها از یک اسپری فیکس با خاصیت آبرسانی استفاده کنید تا آرایش شما تازه و با طراوت به نظر برسد.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-6">
+                        <span>آیا محصولات e.l.f. برای پوست‌های خشک حساس هم مناسب هستند؟</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-6" role="region">
+                        <p>بسیاری از محصولات e.l.f. با در نظر گرفتن انواع پوست، از جمله پوست‌های حساس، فرموله می‌شوند. ما محصولاتی داریم که فاقد عطر، پارابن و سایر مواد بالقوه حساسیت‌زا هستند. به عنوان مثال، محصولات لاین Holy Hydration! ما به طور خاص برای آبرسانی و تسکین پوست خشک طراحی شده‌اند. با این حال، همیشه توصیه می‌کنیم قبل از استفاده از هر محصول جدید، لیست مواد تشکیل‌دهنده آن را بررسی کنید و در صورت داشتن حساسیت خاص، یک تست پچ کوچک روی قسمت داخلی بازو انجام دهید.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-16 bg-[var(--bg-tertiary)]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center bg-[var(--card-bg)] p-8 md:p-12 rounded-lg shadow-xl">
+                <i class="far fa-envelope text-5xl text-[var(--accent-color)] mb-6"></i>
+                <h2 class="text-3xl font-bold mb-4 text-[var(--text-primary)]">در جریان بمانید!</h2>
+                <p class="text-[var(--text-muted)] mb-8">
+                    برای دریافت آخرین محصولات، معاملات انحصاری و نکات زیبایی مستقیماً در صندوق ورودی خود، در خبرنامه ما ثبت نام کنید.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="email" placeholder="ایمیل خود را وارد کنید" class="flex-grow px-5 py-3 border border-[var(--input-border)] bg-[var(--input-bg)] text-[var(--text-primary)] rounded-full focus:ring-1 focus:ring-[var(--input-focus-ring)] focus:border-[var(--input-focus-ring)] outline-none transition-shadow text-right" required>
+                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold py-3 px-6 rounded-full transition-transform transform hover:scale-105 shadow-md">
+                        اشتراک
+                    </button>
+                </form>
+                <p class="text-xs text-[var(--text-muted)] mt-4">ما به حریم خصوصی شما احترام می‌گذاریم. هر زمان که بخواهید می‌توانید اشتراک خود را لغو کنید.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[var(--footer-bg)] text-[var(--footer-text)] py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-right md:text-right">
+                <div>
+                    <h4 class="text-xl font-semibold text-[var(--footer-heading-text)] mb-5">e.l.f.</h4>
+                    <p class="mb-4 text-sm">زیبایی برای هر چشم، لب و صورت. بدون تست حیوانی، وگان و همیشه مقرون به صرفه.</p>
+                    <div class="flex space-x-4 space-x-reverse justify-end md:justify-start">
+                        <a href="#" class="text-[var(--footer-text)] hover:text-[var(--footer-link-hover)] transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-[var(--footer-text)] hover:text-[var(--footer-link-hover)] transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-[var(--footer-text)] hover:text-[var(--footer-link-hover)] transition-colors"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="#" class="text-[var(--footer-text)] hover:text-[var(--footer-link-hover)] transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-[var(--footer-heading-text)] mb-5">خرید</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#new-arrivals" class="hover:text-[var(--footer-link-hover)] transition-colors">جدیدترین‌ها</a></li>
+                        <li><a href="#best-sellers" class="hover:text-[var(--footer-link-hover)] transition-colors">پرفروش‌ها</a></li>
+                        <li><a href="#face-category" class="hover:text-[var(--footer-link-hover)] transition-colors">صورت</a></li>
+                        <li><a href="#eyes-category" class="hover:text-[var(--footer-link-hover)] transition-colors">چشم</a></li>
+                        <li><a href="#lips-category" class="hover:text-[var(--footer-link-hover)] transition-colors">لب</a></li>
+                        <li><a href="#skin-care-category" class="hover:text-[var(--footer-link-hover)] transition-colors">مراقبت از پوست</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-[var(--footer-heading-text)] mb-5">پشتیبانی</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">تماس با ما</a></li>
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">سوالات متداول</a></li>
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">ارسال و بازگشت</a></li>
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">پیگیری سفارش</a></li>
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">مکان‌یاب فروشگاه</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-[var(--footer-heading-text)] mb-5">شرکت</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">درباره e.l.f.</a></li>
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">فرصت‌های شغلی</a></li>
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">همکاری در فروش</a></li>
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">سیاست حفظ حریم خصوصی</a></li>
+                        <li><a href="#" class="hover:text-[var(--footer-link-hover)] transition-colors">شرایط خدمات</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-[var(--footer-border-color)] pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> e.l.f. Cosmetics, Inc. کلیه حقوق محفوظ است. این یک طرح مفهومی بازطراحی است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Firebase App (the core Firebase SDK) is always required and must be listed first
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        // Add the Firebase products that you want to use
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, updateDoc, collection, onSnapshot, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID" }; // Fallback for local dev
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'elf-cosmetics-redesign-preview'; // Fallback app ID
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let userId = null;
+        let cart = [];
+        let wishlist = []; // Wishlist array
+        const cartDocRef = () => doc(db, "artifacts", appId, "users", userId, "cart", "userCartDoc");
+        const wishlistDocRef = () => doc(db, "artifacts", appId, "users", userId, "wishlist", "userWishlistDoc");
+
+
+        // --- Cart Logic ---
+        const cartDrawer = document.getElementById('cartDrawer');
+        const cartDrawerOverlay = document.getElementById('cartDrawerOverlay');
+        const cartIcon = document.getElementById('cartIcon');
+        const cartCloseBtn = document.getElementById('cartCloseBtn');
+        const continueShoppingBtn = document.getElementById('continueShoppingBtn');
+        const cartBody = document.getElementById('cartBody');
+        const cartItemCount = document.getElementById('cartItemCount');
+        const cartTotalAmount = document.getElementById('cartTotalAmount');
+
+        function openCartDrawer() {
+            if (cartDrawer) cartDrawer.classList.add('active');
+            if (cartDrawerOverlay) cartDrawerOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCartDrawer() {
+            if (cartDrawer) cartDrawer.classList.remove('active');
+            if (cartDrawerOverlay) cartDrawerOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (cartIcon) cartIcon.addEventListener('click', openCartDrawer);
+        if (cartCloseBtn) cartCloseBtn.addEventListener('click', closeCartDrawer);
+        if (continueShoppingBtn) continueShoppingBtn.addEventListener('click', closeCartDrawer);
+        if (cartDrawerOverlay) cartDrawerOverlay.addEventListener('click', closeCartDrawer);
+
+        async function saveCartToFirestore() {
+            if (userId && db) {
+                try {
+                    await setDoc(cartDocRef(), { items: cart }, { merge: true });
+                } catch (error) {
+                    console.error("Error saving cart to Firestore: ", error);
+                }
+            }
+        }
+
+        async function loadCartFromFirestore() {
+            if (userId && db) {
+                try {
+                    const docSnap = await getDoc(cartDocRef());
+                    if (docSnap.exists()) {
+                        const firestoreCart = docSnap.data().items || [];
+                        cart = [...firestoreCart]; 
+                    } else {
+                        cart = [];
+                    }
+                } catch (error) {
+                    console.error("Error loading cart from Firestore: ", error);
+                    cart = []; 
+                }
+                renderCart();
+                updateCartIconCount();
+            }
+        }
+        
+        function generateProductId(name, price) {
+            const priceString = typeof price === 'number' ? price.toFixed(2) : String(price);
+            return `${name.replace(/\s+/g, '-').toLowerCase()}-${priceString}`;
+        }
+
+        // get product from video-carousel.js and other components and add to cart
+        document.addEventListener('add-to-cart', (event) => {
+            addToCart(event.detail);
+            openCartDrawer();
+        });
+
+        function addToCart(product) {
+            const productId = generateProductId(product.name, product.price);
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...product, id: productId, quantity: 1 });
+            }
+            renderCart();
+            updateCartIconCount();
+            saveCartToFirestore();
+            // Do not automatically open cart drawer from here, let the specific button click handler decide
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    renderCart();
+                    updateCartIconCount();
+                    saveCartToFirestore();
+                }
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            renderCart();
+            updateCartIconCount();
+            saveCartToFirestore();
+        }
+
+        function renderCart() {
+            if (!cartBody) return;
+            cartBody.innerHTML = ''; 
+
+            if (cart.length === 0) {
+                cartBody.innerHTML = '<p class="cart-empty-message">سبد خرید شما خالی است.</p>';
+                if (cartTotalAmount) cartTotalAmount.textContent = '۰.۰۰ دلار';
+                return;
+            }
+
+            let total = 0;
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.dataset.id = item.id;
+
+                const itemSubtotal = item.price * item.quantity;
+                total += itemSubtotal;
+
+                itemElement.innerHTML = `
+                    <img loading="lazy" src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-name">${item.name}</h4>
+                        <p class="cart-item-price">${parseFloat(item.price).toFixed(2)} دلار</p>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-decrease" aria-label="کاهش تعداد" data-id="${item.id}">-</button>
+                            <span class="px-2">${item.quantity}</span>
+                            <button class="quantity-increase" aria-label="افزایش تعداد" data-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                    <button class="cart-item-remove-btn" aria-label="حذف آیتم" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button>
+                `;
+                cartBody.appendChild(itemElement);
+            });
+
+            if (cartTotalAmount) cartTotalAmount.textContent = `${total.toFixed(2)} دلار`;
+
+            cartBody.querySelectorAll('.quantity-decrease').forEach(btn => {
+                btn.addEventListener('click', () => updateQuantity(btn.dataset.id, -1));
+            });
+            cartBody.querySelectorAll('.quantity-increase').forEach(btn => {
+                btn.addEventListener('click', () => updateQuantity(btn.dataset.id, 1));
+            });
+            cartBody.querySelectorAll('.cart-item-remove-btn').forEach(btn => {
+                btn.addEventListener('click', () => removeFromCart(btn.dataset.id));
+            });
+        }
+
+        function updateCartIconCount() {
+            if (!cartItemCount) return;
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartItemCount.textContent = totalItems;
+            cartItemCount.classList.toggle('hidden', totalItems === 0);
+        }
+        
+        document.querySelectorAll('.add-to-cart-action').forEach(button => {
+            button.addEventListener('click', (e) => {
+                if (button.closest('a') && e.target.closest('a') === button.closest('a') && !button.classList.contains('add-to-cart-btn-style1') && !button.classList.contains('add-to-cart-btn-style2') && !button.classList.contains('add-to-cart-btn-style3') && !button.classList.contains('add-to-cart-btn')) { // Allow if button is the link itself or a specific add-to-cart button not meant to navigate
+                     // Only prevent default if the button is NOT the link itself, to allow links to work
+                } else if (button.closest('a')) {
+                     e.preventDefault();
+                }
+                e.stopPropagation(); 
+
+                const cardElement = button.closest('[data-product-name], [data-bundle-name]');
+                let productData = null;
+
+                if (cardElement) {
+                    if (cardElement.dataset.bundleName) { 
+                        productData = {
+                            name: cardElement.dataset.bundleName,
+                            price: parseFloat(cardElement.dataset.bundlePrice),
+                            image: cardElement.dataset.bundleImage || 'https://placehold.co/80x80/eeeeee/777777?text=Bundle',
+                            isBundle: true
+                        };
+                    } else if (cardElement.dataset.productName) { 
+                        productData = {
+                            name: cardElement.dataset.productName,
+                            price: parseFloat(cardElement.dataset.productPrice),
+                            image: cardElement.dataset.productImage || (cardElement.querySelector('img') ? cardElement.querySelector('img').src : 'https://placehold.co/80x80/eeeeee/777777?text=e.l.f.'),
+                            isBundle: false
+                        };
+                    }
+                }
+
+                if (productData && productData.name && !isNaN(productData.price) && productData.image) {
+                    addToCart(productData);
+                    openCartDrawer(); 
+                } else {
+                    console.error("Could not extract product/bundle data for cart addition from element:", cardElement, "button:", button);
+                }
+            });
+        });
+
+        // --- Wishlist Logic ---
+        const wishlistDrawer = document.getElementById('wishlistDrawer');
+        const wishlistDrawerOverlay = document.getElementById('wishlistDrawerOverlay');
+        const wishlistIconBtn = document.getElementById('wishlistIconBtn'); 
+        const wishlistCloseBtn = document.getElementById('wishlistCloseBtn');
+        const viewAllWishlistBtn = document.getElementById('viewAllWishlistBtn');
+        const wishlistBody = document.getElementById('wishlistBody');
+        const wishlistItemCount = document.getElementById('wishlistItemCount');
+
+
+        function openWishlistDrawer() {
+            if (wishlistDrawer) wishlistDrawer.classList.add('active');
+            if (wishlistDrawerOverlay) wishlistDrawerOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            renderWishlistDrawer(); 
+        }
+
+        function closeWishlistDrawer() {
+            if (wishlistDrawer) wishlistDrawer.classList.remove('active');
+            if (wishlistDrawerOverlay) wishlistDrawerOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if(wishlistIconBtn) wishlistIconBtn.addEventListener('click', openWishlistDrawer);
+        if(wishlistCloseBtn) wishlistCloseBtn.addEventListener('click', closeWishlistDrawer);
+        if(wishlistDrawerOverlay) wishlistDrawerOverlay.addEventListener('click', closeWishlistDrawer);
+        if(viewAllWishlistBtn) viewAllWishlistBtn.addEventListener('click', () => {
+            closeWishlistDrawer();
+        });
+
+
+        async function saveWishlistToFirestore() {
+            if (userId && db) {
+                try {
+                    await setDoc(wishlistDocRef(), { items: wishlist }, { merge: true });
+                } catch (error) {
+                    console.error("Error saving wishlist to Firestore: ", error);
+                }
+            }
+        }
+
+        async function loadWishlistFromFirestore() {
+            if (userId && db) {
+                try {
+                    const docSnap = await getDoc(wishlistDocRef());
+                    if (docSnap.exists()) {
+                        const firestoreWishlist = docSnap.data().items || [];
+                        wishlist = [...firestoreWishlist];
+                    } else {
+                        wishlist = [];
+                    }
+                } catch (error) {
+                    console.error("Error loading wishlist from Firestore: ", error);
+                    wishlist = [];
+                }
+                updateAllWishlistIcons();
+                updateWishlistHeaderCount();
+            }
+        }
+
+        function isProductInWishlist(productId) {
+            return wishlist.some(item => item.id === productId);
+        }
+
+        function toggleWishlist(product) {
+            const productId = generateProductId(product.name, product.price);
+            const productIndex = wishlist.findIndex(item => item.id === productId);
+
+            if (productIndex > -1) {
+                wishlist.splice(productIndex, 1); // Remove item
+            } else {
+                wishlist.push({ ...product, id: productId }); 
+            }
+            updateAllWishlistIcons();
+            updateWishlistHeaderCount();
+            saveWishlistToFirestore();
+            if (wishlistDrawer && wishlistDrawer.classList.contains('active')) {
+                renderWishlistDrawer(); 
+            }
+        }
+
+        function updateWishlistIcon(buttonElement, productId) {
+            if (!buttonElement) return;
+            const heartIcon = buttonElement.querySelector('i');
+            if (heartIcon) {
+                if (isProductInWishlist(productId)) {
+                    heartIcon.classList.remove('far');
+                    heartIcon.classList.add('fas', 'text-[var(--wishlist-active-color)]');
+                    buttonElement.classList.add('active');
+                    buttonElement.setAttribute('aria-label', 'حذف از علاقه‌مندی‌ها');
+                } else {
+                    heartIcon.classList.remove('fas', 'text-[var(--wishlist-active-color)]');
+                    heartIcon.classList.add('far');
+                    buttonElement.classList.remove('active');
+                     buttonElement.setAttribute('aria-label', 'افزودن به علاقه‌مندی‌ها');
+                }
+            }
+        }
+
+        function updateAllWishlistIcons() {
+            document.querySelectorAll('.wishlist-btn').forEach(button => {
+                const card = button.closest('[data-product-name], [data-bundle-name]'); // Check for both product and bundle cards
+                if (card) {
+                    const name = card.dataset.productName || card.dataset.bundleName; // Use bundle name if it's a bundle
+                    const price = parseFloat(card.dataset.productPrice || card.dataset.bundlePrice);
+                    if (name && !isNaN(price)) {
+                         const productId = generateProductId(name, price);
+                         updateWishlistIcon(button, productId);
+                    }
+                }
+            });
+        }
+        
+        function updateWishlistHeaderCount() {
+            if (!wishlistItemCount || !wishlistIconBtn) return;
+            const totalItems = wishlist.length;
+            wishlistItemCount.textContent = totalItems;
+            wishlistItemCount.classList.toggle('hidden', totalItems === 0);
+            
+            const headerHeartIcon = wishlistIconBtn.querySelector('i');
+            if(headerHeartIcon){
+                if(totalItems > 0){
+                    headerHeartIcon.classList.remove('far');
+                    headerHeartIcon.classList.add('fas', 'text-[var(--accent-color)]');
+                } else {
+                    headerHeartIcon.classList.remove('fas', 'text-[var(--accent-color)]');
+                    headerHeartIcon.classList.add('far');
+                }
+            }
+        }
+
+        function renderWishlistDrawer() {
+            if (!wishlistBody) return;
+            wishlistBody.innerHTML = '';
+
+            if (wishlist.length === 0) {
+                wishlistBody.innerHTML = '<p class="wishlist-empty-message">لیست علاقه‌مندی‌های شما خالی است.</p>';
+                return;
+            }
+
+            wishlist.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('wishlist-item');
+                itemElement.dataset.id = item.id; 
+
+                itemElement.innerHTML = `
+                    <img loading="lazy" src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <div class="wishlist-item-details">
+                        <h4 class="wishlist-item-name">${item.name}</h4>
+                        <p class="wishlist-item-price">${parseFloat(item.price).toFixed(2)} دلار</p>
+                    </div>
+                    <button class="wishlist-item-add-to-cart-btn add-to-cart-action" aria-label="افزودن به سبد خرید" data-product-name="${item.name}" data-product-price="${item.price}" data-product-image="${item.image}">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                    <button class="wishlist-item-remove-btn wishlist-btn" aria-label="حذف از علاقه‌مندی‌ها" data-product-name="${item.name}" data-product-price="${item.price}" data-product-image="${item.image}">
+                        <i class="fas fa-trash-alt"></i> <!-- Changed to trash icon for remove in drawer -->
+                    </button>
+                `;
+                wishlistBody.appendChild(itemElement);
+            });
+
+            // Re-attach event listeners for dynamically created buttons inside wishlist drawer
+            wishlistBody.querySelectorAll('.wishlist-item-add-to-cart-btn').forEach(button => {
+                 button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const name = button.dataset.productName;
+                    const price = parseFloat(button.dataset.productPrice);
+                    const image = button.dataset.productImage;
+                     if (name && !isNaN(price) && image) {
+                        addToCart({ name, price, image });
+                        openCartDrawer(); 
+                    }
+                });
+            });
+            wishlistBody.querySelectorAll('.wishlist-item-remove-btn.wishlist-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const name = button.dataset.productName;
+                    const price = parseFloat(button.dataset.productPrice);
+                    const image = button.dataset.productImage; 
+                    if (name && !isNaN(price)) {
+                        toggleWishlist({ name, price, image }); 
+                    }
+                });
+            });
+        }
+
+
+        document.querySelectorAll('.wishlist-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const card = button.closest('[data-product-name], [data-bundle-name]');
+                if (card) {
+                    const name = card.dataset.productName || card.dataset.bundleName;
+                    const price = parseFloat(card.dataset.productPrice || card.dataset.bundlePrice);
+                    const image = card.dataset.productImage || card.dataset.bundleImage || (card.querySelector('img') ? card.querySelector('img').src : 'https://placehold.co/80x80/eeeeee/777777?text=e.l.f.');
+                     if (name && !isNaN(price) && image) {
+                        toggleWishlist({ name, price, image });
+                    } else {
+                        console.error("Product/Bundle data missing for wishlist on card:", card.dataset);
+                    }
+                }
+            });
+        });
+        
+        // Firebase Auth State Change Listener
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                console.log("User is signed in with UID:", user.uid);
+                userId = user.uid;
+                await loadCartFromFirestore(); 
+                await loadWishlistFromFirestore(); 
+            } else {
+                console.log("User is signed out or not yet signed in.");
+                userId = null;
+                cart = []; 
+                wishlist = [];
+                renderCart();
+                updateCartIconCount();
+                updateAllWishlistIcons();
+                updateWishlistHeaderCount();
+                try {
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                         console.log("Attempting sign in with custom token.");
+                         await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        console.log("Attempting anonymous sign in.");
+                        await signInAnonymously(auth);
+                    }
+                } catch (error) {
+                    console.error("Error during sign-in:", error);
+                }
+            }
+        });
+
+
+        const themeToggleButton = document.getElementById('themeToggle');
+        const mobileThemeToggleButton = document.getElementById('mobileThemeToggle');
+        const searchIconMobileToggle = document.getElementById('searchIconMobileToggle');
+        const searchBarMobile = document.getElementById('searchBarMobile');
+        const htmlElement = document.documentElement;
+
+        function setIcon(theme) {
+            const iconHtml = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            if (themeToggleButton) themeToggleButton.innerHTML = iconHtml;
+            if (mobileThemeToggleButton) {
+                 const mobileIcon = mobileThemeToggleButton.querySelector('i');
+                 if (mobileIcon) {
+                    mobileIcon.className = theme === 'dark' ? 'fas fa-sun ml-2' : 'fas fa-moon ml-2';
+                 }
+            }
+        }
+        
+        function applyTheme(theme) {
+            htmlElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            setIcon(theme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+
+        function toggleTheme() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        }
+
+        if (themeToggleButton) themeToggleButton.addEventListener('click', toggleTheme);
+        if (mobileThemeToggleButton) {
+            mobileThemeToggleButton.addEventListener('click', () => {
+                toggleTheme();
+                if (mobileMenu.classList.contains('open')) closeMenu();
+            });
+        }
+        
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMobileMenuButton = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        function openMenu() {
+            if(mobileMenu) mobileMenu.classList.add('open');
+            if(mobileMenuOverlay) {
+                mobileMenuOverlay.classList.remove('hidden');
+                setTimeout(() => mobileMenuOverlay.style.opacity = '1', 10);
+            }
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            if(mobileMenu) mobileMenu.classList.remove('open');
+            if(mobileMenuOverlay) {
+                mobileMenuOverlay.style.opacity = '0';
+                setTimeout(() => mobileMenuOverlay.classList.add('hidden'), 300);
+            }
+            document.body.style.overflow = '';
+        }
+
+        if (mobileMenuButton) mobileMenuButton.addEventListener('click', openMenu);
+        if (closeMobileMenuButton) closeMobileMenuButton.addEventListener('click', closeMenu);
+        if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+        
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('nav a:not(#mobileThemeToggle)').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('open')) {
+                         if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+                            closeMenu();
+                         }
+                    }
+                });
+            });
+        }
+
+        if (searchIconMobileToggle && searchBarMobile) {
+            searchIconMobileToggle.addEventListener('click', () => {
+                searchBarMobile.classList.toggle('hidden');
+                if (!searchBarMobile.classList.contains('hidden')) {
+                    searchBarMobile.querySelector('input').focus();
+                }
+            });
+        }
+        
+        const currentYearEl = document.getElementById('currentYear');
+        if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('#mobileThemeToggle')) {
+                    if (e.target.closest('.add-to-cart-action, .wishlist-btn, .video-mute-btn, .p-action button, .plus-icon-wrapper')) {
+                        return; 
+                    }
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const header = document.querySelector('header');
+                        const categoryNav = document.querySelector('.category-nav');
+                        let headerOffset = 0;
+                        if (header) headerOffset += header.offsetHeight;
+                        if (categoryNav && getComputedStyle(categoryNav).display !== 'none') {
+                             headerOffset += categoryNav.offsetHeight;
+                        }
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                    }
+                }
+            });
+        });
+
+        // Hero Carousel Logic
+        const heroCarousel = document.getElementById('heroCarousel');
+        const heroSlides = heroCarousel ? Array.from(heroCarousel.querySelectorAll('.hero-carousel-slide')) : [];
+        const heroNavPrev = document.getElementById('heroPrev');
+        const heroNavNext = document.getElementById('heroNext');
+        let currentHeroCarouselSlide = 0;
+        let heroCarouselInterval;
+        let isHeroCarouselIntersecting = false;
+        let heroBgLayer1 = document.getElementById('heroBgLayer1');
+        let heroBgLayer2 = document.getElementById('heroBgLayer2');
+        let currentActiveBgLayer = heroBgLayer1; 
+
+        function updateHeroCarouselSlides() {
+            if (!heroSlides.length) return;
+            heroSlides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev', 'next', 'far-prev', 'far-next');
+                let newClass = '';
+                const diff = index - currentHeroCarouselSlide;
+                const len = heroSlides.length;
+
+                if (diff === 0) newClass = 'active';
+                else if (diff === 1 || diff === -(len - 1)) newClass = 'next';
+                else if (diff === -1 || diff === (len - 1)) newClass = 'prev';
+                else if (diff === 2 || diff === -(len - 2)) newClass = 'far-next';
+                else if (diff === -2 || diff === (len - 2)) newClass = 'far-prev';
+                
+                if (newClass) slide.classList.add(newClass);
+            });
+
+            if (heroBgLayer1 && heroBgLayer2) {
+                const activeSlideImg = heroSlides[currentHeroCarouselSlide].querySelector('.slide-image');
+                if (activeSlideImg) {
+                    const newImageUrl = activeSlideImg.src;
+                    if (currentActiveBgLayer === heroBgLayer1) {
+                        heroBgLayer2.style.backgroundImage = `url('${newImageUrl}')`;
+                        heroBgLayer1.classList.remove('visible');
+                        heroBgLayer2.classList.add('visible');
+                        currentActiveBgLayer = heroBgLayer2;
+                    } else {
+                        heroBgLayer1.style.backgroundImage = `url('${newImageUrl}')`;
+                        heroBgLayer2.classList.remove('visible');
+                        heroBgLayer1.classList.add('visible');
+                        currentActiveBgLayer = heroBgLayer1;
+                    }
+                }
+            }
+        }
+
+
+        function nextHeroCarousel() {
+            currentHeroCarouselSlide = (currentHeroCarouselSlide + 1) % heroSlides.length;
+            updateHeroCarouselSlides();
+        }
+
+        function prevHeroCarousel() {
+            currentHeroCarouselSlide = (currentHeroCarouselSlide - 1 + heroSlides.length) % heroSlides.length;
+            updateHeroCarouselSlides();
+        }
+
+        function startHeroCarouselInterval() {
+            if (!isHeroCarouselIntersecting || heroSlides.length <= 1) return;
+            clearInterval(heroCarouselInterval);
+            heroCarouselInterval = setInterval(nextHeroCarousel, 6000); 
+        }
+
+        function stopHeroCarouselInterval() {
+            clearInterval(heroCarouselInterval);
+        }
+        
+        function resetHeroCarouselInterval() {
+            stopHeroCarouselInterval();
+            startHeroCarouselInterval();
+        }
+
+        if (heroSlides.length > 0) {
+            if (heroBgLayer1) {
+                const initialActiveSlideImg = heroSlides[0].querySelector('.slide-image');
+                if (initialActiveSlideImg) {
+                    heroBgLayer1.style.backgroundImage = `url('${initialActiveSlideImg.src}')`;
+                    heroBgLayer1.classList.add('visible');
+                }
+            }
+            updateHeroCarouselSlides(); 
+            if (heroNavNext) heroNavNext.addEventListener('click', () => { nextHeroCarousel(); resetHeroCarouselInterval(); });
+            if (heroNavPrev) heroNavPrev.addEventListener('click', () => { prevHeroCarousel(); resetHeroCarouselInterval(); });
+
+            const heroWrapper = document.querySelector('.hero-carousel-wrapper');
+            if (heroWrapper) { 
+                 const heroCarouselObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            isHeroCarouselIntersecting = true;
+                            startHeroCarouselInterval();
+                        } else {
+                            isHeroCarouselIntersecting = false;
+                            stopHeroCarouselInterval();
+                        }
+                    });
+                }, { threshold: 0.1 }); 
+                heroCarouselObserver.observe(heroWrapper);
+                 heroWrapper.addEventListener('mouseenter', () => {
+                    if (isHeroCarouselIntersecting) stopHeroCarouselInterval();
+                });
+                heroWrapper.addEventListener('mouseleave', () => {
+                    if (isHeroCarouselIntersecting) startHeroCarouselInterval();
+                });
+            }
+        }
+
+
+        // Horizontal Product Slider Navigation
+        document.querySelectorAll('.horizontal-slider-wrapper').forEach(wrapper => {
+            const slider = wrapper.querySelector('.horizontal-product-slider');
+            const prevBtn = wrapper.querySelector('.slider-nav-button.prev');
+            const nextBtn = wrapper.querySelector('.slider-nav-button.next');
+            
+            let cardWidth = 280 + 16; 
+            const firstCard = slider ? slider.querySelector('a > div[class*="product-card-style"], a > .video-testimonial-slider-item, .bundle-card') : null;
+            if (firstCard) {
+                 const cardStyle = window.getComputedStyle(firstCard.parentElement); 
+                 const marginLeft = parseFloat(cardStyle.marginLeft) || 0;
+                 const marginRight = parseFloat(cardStyle.marginRight) || 0;
+                 cardWidth = firstCard.offsetWidth + marginLeft + marginRight;
+            }
+
+
+            if (slider && prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => { // Left button in RTL (shows next items)
+                    slider.scrollBy({ left: cardWidth, behavior: 'smooth' }); 
+                });
+                nextBtn.addEventListener('click', () => { // Right button in RTL (shows prev items)
+                    slider.scrollBy({ left: -cardWidth, behavior: 'smooth' }); 
+                });
+            }
+        });
+
+
+        const aspectRatioItems = document.querySelectorAll('.aspect-w-1.aspect-h-1');
+        aspectRatioItems.forEach(item => {
+            if (!item.style.paddingBottom) {
+                item.style.position = 'relative';
+                item.style.paddingBottom = '100%';
+            }
+            const img = item.querySelector('img');
+            if (img && !img.classList.contains('object-cover')) {
+                img.style.position = 'absolute';
+                img.style.height = '100%';
+                img.style.width = '100%';
+                img.style.objectFit = 'cover';
+            }
+            const overlayText = item.querySelector('.absolute.inset-0');
+             if (overlayText && !overlayText.style.position) {
+                overlayText.style.position = 'absolute';
+             }
+        });
+
+        // FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+
+            if (question && answer && icon) {
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    item.classList.toggle('active');
+                    question.setAttribute('aria-expanded', String(!isActive));
+
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    } else {
+                        answer.style.maxHeight = null;
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    }
+                });
+            }
+        });
+
+
+
+    </script>
+
+</body>
+    <!-- components -->
+    <script src="assets/js/components/video-carousel.js"></script>
+
+</html>

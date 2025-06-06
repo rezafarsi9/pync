@@ -1,0 +1,828 @@
+class VideoCarousel extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.currentIndex = 0;
+        this.isTransitioning = false;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.minSwipeDistance = 50;
+        this._videos = [];
+    }
+
+    static get observedAttributes() {
+        return ['videos', 'skip-external-styles'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'videos' && newValue) {
+            try {
+                this._videos = JSON.parse(newValue);
+                if (this.isConnected) {
+                    this.render();
+                    this.setupEventListeners();
+                    this.playCurrentVideo();
+                    this.updateNavigation();
+                }
+            } catch (e) {
+                console.error('Invalid JSON for videos attribute:', e);
+            }
+        }
+    }
+
+    get videos() {
+        return this._videos;
+    }
+
+    set videos(value) {
+        this._videos = value;
+        if (this.isConnected) {
+            this.render();
+            this.setupEventListeners();
+            this.playCurrentVideo();
+            this.updateNavigation();
+        }
+    }
+
+    connectedCallback() {
+        this.shadowRoot.querySelector('.play-pause-btn').addEventListener('click', this.togglePlayPause.bind(this));
+        this.shadowRoot.querySelector('.mute-unmute-btn').addEventListener('click', this.toggleMute.bind(this));      
+        
+        const videosAttr = this.getAttribute('videos');
+        if (videosAttr) {
+            try {
+                this._videos = JSON.parse(videosAttr);
+            } catch (e) {
+                console.error('Invalid JSON for videos attribute:', e);
+            }
+        }
+        this.render();
+        this.setupEventListeners();
+        this.playCurrentVideo();
+        this.updateNavigation();
+    }
+
+    render() {
+        const skipExternalStyles = this.hasAttribute('skip-external-styles');
+        const isVazirmatnLoaded = document.fonts && document.fonts.check('1em Vazirmatn');
+        const isFontAwesomeLoaded = false; //document.querySelector('link[href*="font-awesome"], link[href*="fontawesome"]') || document.querySelector('.fa, .fas, .far');
+
+
+                                    // :host {
+                                    //     --font-main: 'Vazirmatn', sans-serif;
+                                    //     --bg-primary: #2a3441;
+                                    //     --bg-secondary: #1a1a1a;
+                                    //     --text-primary: #ffffff;
+                                    //     --text-secondary: #cccccc;
+                                    //     --accent-color: #e6007e;
+                                    //     --accent-hover-color: #c4006b;
+                                    //     --card-bg: rgba(255, 255, 255, 0.1);
+                                    //     --card-border: rgba(255, 255, 255, 0.2);
+                                        
+                                    //     display: block;
+                                    //     font-family: var(--font-main);
+                                    //     background: linear-gradient(135deg, #2a3441 0%, #1e2631 100%);
+                                    //     color: var(--text-primary);
+                                    //     overflow: hidden;
+                                    //     margin: 0;
+                                    //     padding: 0;
+                                    //     min-height: 100vh;
+                                    //     direction: rtl;
+                                    // }
+                    
+        this.shadowRoot.innerHTML = `
+            <style>
+                * {
+                    user-select: none;
+                }
+                img, button {
+                pointer-events: auto;
+                user-drag: none;
+                -webkit-user-drag: none;
+                }                
+                .carousel-container {
+                    position: relative;
+                    width: 100vw;
+                    height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    perspective: 1200px;
+                }
+
+                .carousel-title {
+                    position: absolute;
+                    top: 60px;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+                    color: rgba(255, 255, 255, 0.8);
+                    z-index: 10;
+                }
+
+                .carousel-track {
+                    position: relative;
+                    width: 100%;
+                    height: 400px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform-style: preserve-3d;
+                    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                }
+
+                .video-card {
+                    position: absolute;
+                    width: 280px;
+                    height: 380px;
+                    background: var(--card-bg);
+                    border: 2px solid var(--card-border);
+                    border-radius: 20px;
+                    backdrop-filter: blur(10px);
+                    overflow: hidden;
+                    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    cursor: pointer;
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                }
+
+                .video-card.active {
+                    transform: translateZ(0) rotateY(0deg) scale(1.1);
+                    z-index: 5;
+                    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+                }
+
+                .video-card.prev {
+                    transform: translateX(-300px) translateZ(-200px) rotateY(25deg) scale(0.8);
+                    opacity: 0.7;
+                    z-index: 2;
+                }
+
+                .video-card.next {
+                    transform: translateX(300px) translateZ(-200px) rotateY(-25deg) scale(0.8);
+                    opacity: 0.7;
+                    z-index: 2;
+                }
+
+                .video-card.far-prev {
+                    transform: translateX(-500px) translateZ(-300px) rotateY(35deg) scale(0.6);
+                    opacity: 0.4;
+                    z-index: 1;
+                }
+
+                .video-card.far-next {
+                    transform: translateX(500px) translateZ(-300px) rotateY(-35deg) scale(0.6);
+                    opacity: 0.4;
+                    z-index: 1;
+                }
+
+                .video-card.hidden {
+                    transform: translateX(-800px) translateZ(-400px) rotateY(45deg) scale(0.4);
+                    opacity: 0;
+                    z-index: 0;
+                }
+
+                .video-element {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 18px;
+                }
+
+                .video-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.8));
+                    pointer-events: none;
+                    border-radius: 18px;
+                }
+
+                .video-info {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    right: 20px;
+                    z-index: 10;
+                }
+
+                .video-title {
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    margin-bottom: 8px;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+                }
+
+                .video-description {
+                    font-size: 0.9rem;
+                    opacity: 0.9;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+                    line-height: 1.4;
+                }
+
+                .video-controls {
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    transform: translateY(-50%);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    z-index: 10;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                .video-card.active .video-controls {
+                    opacity: 1;
+                }
+
+                .control-btn {
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.2);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-size: 1rem;
+                }
+
+                .control-btn:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: scale(1.1);
+                }
+
+                .control-btn.active {
+                    background: var(--accent-color);
+                    color: white;
+                }
+
+                .play-pause-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(0, 0, 0, 0.3);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 8;
+                    border-radius: 18px;
+                }
+
+                .video-card:hover .play-pause-overlay {
+                    opacity: 1;
+                }
+
+                .play-pause-btn {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.2);
+                    backdrop-filter: blur(10px);
+                    border: 2px solid rgba(255, 255, 255, 0.4);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-size: 1.5rem;
+                }
+
+                .play-pause-btn:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: scale(1.1);
+                }
+
+                .mute-unmute-btn {
+                    position: fixed;
+                    top: 10%;
+                    left: 10%;
+                    transform: translate(0%, 0%);
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.2);
+                    backdrop-filter: blur(10px);
+                    border: 2px solid rgba(255, 255, 255, 0.4);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-size: 1rem;
+                }
+                .mute-unmute-btn:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: scale(1.1);
+                }
+
+                .navigation-controls {
+                    position: absolute;
+                    bottom: 80px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    gap: 30px;
+                    z-index: 10;
+                }
+
+                .nav-btn {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    border: 2px solid rgba(255, 255, 255, 0.2);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-size: 1.2rem;
+                }
+
+                .nav-btn:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                    transform: scale(1.1);
+                }
+
+                .nav-btn:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+
+                .progress-indicator {
+                    position: absolute;
+                    bottom: 30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    gap: 10px;
+                    z-index: 10;
+                }
+
+                .progress-dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.4);
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+                .progress-dot.active {
+                    background: var(--accent-color);
+                    transform: scale(1.3);
+                }
+
+                .video-number {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 3rem;
+                    font-weight: bold;
+                    color: rgba(255, 255, 255, 0.3);
+                    z-index: 1;
+                    pointer-events: none;
+                }
+
+                .swipe-hint {
+                    position: absolute;
+                    top: 50%;
+                    left: 30px;
+                    transform: translateY(-50%);
+                    color: rgba(255, 255, 255, 0.5);
+                    font-size: 0.9rem;
+                    z-index: 10;
+                    animation: fadeInOut 4s infinite;
+                }
+
+                @keyframes fadeInOut {
+                    0%, 100% { opacity: 0.2; }
+                    50% { opacity: 0.7; }
+                }
+
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.2); }
+                    100% { transform: scale(1); }
+                }
+
+                @media (max-width: 768px) {
+                    .video-card {
+                        width: 240px;
+                        height: 320px;
+                    }
+                    
+                    .video-card.prev, .video-card.next {
+                        transform: translateX(-200px) translateZ(-150px) rotateY(25deg) scale(0.7);
+                    }
+                    
+                    .video-card.next {
+                        transform: translateX(200px) translateZ(-150px) rotateY(-25deg) scale(0.7);
+                    }
+                    
+                    .carousel-title {
+                        font-size: 1rem;
+                        top: 40px;
+                    }
+                    
+                    .swipe-hint {
+                        left: 20px;
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .video-card {
+                    -webkit-tap-highlight-color: transparent;
+                }
+            </style>
+
+            ${!skipExternalStyles && !isVazirmatnLoaded ? `
+                <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+            ` : ''}
+
+            ${!skipExternalStyles && !isFontAwesomeLoaded ? `
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            ` : ''}
+
+            <div class="carousel-container">
+                <div class="carousel-title">3D Carousel/Slider</div>
+                <div class="carousel-track" id="carouselTrack">
+                    ${this._videos.map((video, index) => `
+                        <div class="video-card ${index === 0 ? 'active' : index === 1 ? 'next' : index === 2 ? 'far-next' : 'hidden'}" data-index="${index}">
+                            <div class="video-number">${video.number}</div>
+                            <video class="video-element" loop muted preload="metadata" playsinline >
+                                <source src="${video.src}" type="video/mp4">
+                            </video>
+                            <div class="video-overlay"></div>
+                            <div class="video-info">
+                                <div class="video-title">${video.title}</div>
+                                <div class="video-description">${video.description}</div>
+                            </div>
+                            <div class="video-controls">
+                                <div class="control-btn like-btn" data-action="like">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="control-btn share-btn" data-action="share">
+                                    <i class="fas fa-share"></i>
+                                </div>
+                                <div data-product-name="سرم درخشان کننده لومینوس" data-product-price="12.00" data-product-image="/assets/img/luminus1.jpg">
+                                    <div class="control-btn" data-action="addtocart">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="play-pause-overlay">
+                                <div class="play-pause-btn" data-action="play-pause">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mute-unmute-btn" data-action="mute-unmute">
+                                    <i class="fas fa-volume-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="navigation-controls">
+                    <button class="nav-btn" id="prevBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="nav-btn" id="nextBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+
+                <div class="progress-indicator">
+                    ${this._videos.map((_, index) => `
+                        <div class="progress-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></div>
+                    `).join('')}
+                </div>
+
+                <div class="swipe-hint">
+                    <i class="fas fa-hand-paper"></i><br>
+                    بکشید یا کلیک کنید
+                </div>
+            </div>
+        `;
+    }
+
+    setupEventListeners() {
+        this.cards = this.shadowRoot.querySelectorAll('.video-card');
+        this.dots = this.shadowRoot.querySelectorAll('.progress-dot');
+        this.prevBtn = this.shadowRoot.getElementById('prevBtn');
+        this.nextBtn = this.shadowRoot.getElementById('nextBtn');
+        this.totalCards = this.cards.length;
+
+        this.prevBtn.addEventListener('click', () => this.prev());
+        this.nextBtn.addEventListener('click', () => this.next());
+
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        this.shadowRoot.addEventListener('touchstart', (e) => {
+            this.touchStartX = e.touches[0].clientX;
+        });
+
+        this.shadowRoot.addEventListener('touchend', (e) => {
+            this.touchEndX = e.changedTouches[0].clientX;
+            this.handleSwipe();
+        });
+
+        this.shadowRoot.addEventListener('mousedown', (e) => {
+            this.touchStartX = e.clientX;
+        });
+
+        this.shadowRoot.addEventListener('mouseup', (e) => {
+            this.touchEndX = e.clientX;
+            this.handleSwipe();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.next();
+            if (e.key === 'ArrowRight') this.prev();
+            if (e.key === ' ') {
+                e.preventDefault();
+                this.togglePlayPause();
+                this.toggleMute();
+            }
+        });
+
+        this.shadowRoot.addEventListener('click', (e) => {
+            const action = e.target.closest('[data-action]')?.dataset.action;
+            switch(action) {
+                case 'play-pause':
+                    this.togglePlayPause();
+                    break;
+                case 'mute-unmute':
+                    this.toggleMute();
+                    break;
+                case 'like':
+                    this.toggleLike(e.target.closest('.control-btn'));
+                    break;
+                case 'share':
+                    this.handleShare();
+                    break;
+                case 'addtocart':
+                    this.handleAddToCart();
+                    break;
+            }
+        });
+
+        this.cards.forEach((card, index) => {
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('[data-action]')) {
+                    if (index !== this.currentIndex) {
+                        this.goToSlide(index);
+                    }
+                }
+            });
+        });
+    }
+
+    handleSwipe() {
+        const swipeDistance = this.touchEndX - this.touchStartX;
+        if (Math.abs(swipeDistance) > this.minSwipeDistance) {
+            if (swipeDistance > 0) {
+                this.prev();
+            } else {
+                this.next();
+            }
+        }
+    }
+
+    next() {
+        if (this.isTransitioning) return;
+        this.currentIndex = (this.currentIndex + 1) % this.totalCards;
+        this.updateCarousel();
+    }
+
+    prev() {
+        if (this.isTransitioning) return;
+        this.currentIndex = (this.currentIndex - 1 + this.totalCards) % this.totalCards;
+        this.updateCarousel();
+    }
+
+    goToSlide(index) {
+        if (this.isTransitioning || index === this.currentIndex) return;
+        this.currentIndex = index;
+        this.updateCarousel();
+    }
+
+    updateCarousel() {
+        this.isTransitioning = true;
+        this.pauseAllVideos();
+
+        this.cards.forEach((card, index) => {
+            card.className = 'video-card';
+            const position = this.getCardPosition(index);
+            card.classList.add(position);
+        });
+
+        this.updateDots();
+        this.updateNavigation();
+
+        setTimeout(() => {
+            this.playCurrentVideo();
+            this.isTransitioning = false;
+        }, 600);
+    }
+
+    getCardPosition(index) {
+        const diff = index - this.currentIndex;
+        if (diff === 0) return 'active';
+        if (diff === 1 || diff === -(this.totalCards - 1)) return 'next';
+        if (diff === -1 || diff === (this.totalCards - 1)) return 'prev';
+        if (diff === 2 || diff === -(this.totalCards - 2)) return 'far-next';
+        if (diff === -2 || diff === (this.totalCards - 2)) return 'far-prev';
+        return 'hidden';
+    }
+
+    updateDots() {
+        this.dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.currentIndex);
+        });
+    }
+
+    updateNavigation() {
+        this.prevBtn.disabled = false;
+        this.nextBtn.disabled = false;
+    }
+
+
+    playCurrentVideo() {
+        const currentCard = this.cards[this.currentIndex];
+        if (!currentCard) return;
+    
+        const currentVideo = currentCard.querySelector('.video-element');
+        if (!currentVideo) return;
+    
+        // بررسی اینکه ویدیو داخل Shadow DOM هست
+        if (!this.shadowRoot.contains(currentVideo)) return;
+    
+        const tryPlay = () => {
+            currentVideo.play().catch(e => {
+                console.warn('Video play failed:', e);
+            });
+        };
+    
+        if (currentVideo.readyState >= 3) { // HAVE_FUTURE_DATA
+            tryPlay();
+        } else {
+            const onCanPlay = () => {
+                currentVideo.removeEventListener('canplay', onCanPlay);
+                tryPlay();
+            };
+            currentVideo.addEventListener('canplay', onCanPlay);
+        }
+    }
+    
+
+    pauseAllVideos() {
+        this.cards.forEach(card => {
+            const video = card.querySelector('.video-element');
+            video.pause();
+        });
+    }
+
+    togglePlayPause() {
+        const currentCard = this.cards[this.currentIndex];
+        if (!currentCard) return;
+    
+        const currentVideo = currentCard.querySelector('.video-element');
+        const playPauseBtn = currentCard.querySelector('.play-pause-btn[data-action="play-pause"]');
+        const playBtnIcon = playPauseBtn?.querySelector('i');
+    
+        if (!currentVideo || !playBtnIcon) {
+            console.warn('Play/pause button or video element not found');
+            return;
+        }
+    
+        if (currentVideo.paused) {
+            if (currentVideo.readyState >= 3) { // HAVE_FUTURE_DATA
+                currentVideo.play()
+                    .then(() => {
+                        playBtnIcon.className = 'fas fa-pause';
+                    })
+                    .catch(e => console.warn('Play failed:', e));
+            } else {
+                const onCanPlay = () => {
+                    currentVideo.removeEventListener('canplay', onCanPlay);
+                    currentVideo.play()
+                        .then(() => {
+                            playBtnIcon.className = 'fas fa-pause';
+                        })
+                        .catch(e => console.warn('Play after canplay failed:', e));
+                };
+                currentVideo.addEventListener('canplay', onCanPlay);
+            }
+        } else {
+            currentVideo.pause();
+            playBtnIcon.className = 'fas fa-play';
+        }
+    }
+    
+    toggleMute() {
+        const currentCard = this.cards[this.currentIndex];
+        if (!currentCard) return;
+    
+        const currentVideo = currentCard.querySelector('.video-element');
+        const muteBtn = currentCard.querySelector('.play-pause-btn[data-action="mute-unmute"]');
+        const muteBtnIcon = muteBtn?.querySelector('i');
+    
+        if (!currentVideo || !muteBtnIcon) {
+            console.warn('Mute/unmute button or video element not found');
+            return;
+        }
+    
+        currentVideo.muted = !currentVideo.muted;
+        muteBtnIcon.className = currentVideo.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+    }
+
+
+    toggleLike(button) {
+        button.classList.toggle('active');
+        const icon = button.querySelector('i');
+        
+        if (button.classList.contains('active')) {
+            icon.className = 'fas fa-heart';
+            button.style.animation = 'pulse 0.3s ease';
+        } else {
+            icon.className = 'far fa-heart';
+        }
+        
+        setTimeout(() => {
+            button.style.animation = '';
+        }, 300);
+    }
+
+    handleShare() {
+        if (navigator.share) {
+            navigator.share({
+                title: 'ویدیو جالب',
+                text: 'این ویدیو را ببینید!',
+                url: window.location.href
+            });
+        } else {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('لینک کپی شد!');
+            });
+        }
+    }
+
+    handleAddToCart() {
+        // @todo: این قسمت رو باید به صورت جدی تری پیاده سازی کنیم
+        const product = {
+            name: "ماسک صورت زغالی",
+            price: 99000,
+            image: "https://example.com/image.jpg"
+          };
+        // ارسال رویداد سفارشی
+        this.dispatchEvent(new CustomEvent('add-to-cart', {
+            detail: product,
+            bubbles: true,      // اجازه بده رویداد به بالا بره
+            composed: true      // اجازه بده از shadow DOM بیرون بره
+        }));
+    }
+}
+
+customElements.define('video-carousel', VideoCarousel);
+
+// Example of setting custom videos programmatically
+/*
+const carousel = document.querySelector('video-carousel');
+carousel.videos = [
+    {
+        src: "https://sample-videos.com/zip/10/mp4/480/SampleVideo_1280x720_5mb.mp4",
+        title: "ویدیو جدید ۱",
+        description: "توضیحات ویدیوی جدید ۱",
+        number: "1"
+    },
+    {
+        src: "https://sample-videos.com/zip/10/mp4/480/SampleVideo_1280x720_1mb.mp4",
+        title: "ویدیو جدید ۲",
+        description: "توضیحات ویدیوی جدید ۲",
+        number: "2"
+    }
+];
+*/
